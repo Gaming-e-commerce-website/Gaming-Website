@@ -1,5 +1,4 @@
-
-
+// Navbar
 let nav = document.querySelector('#nav');
 
 window.addEventListener('scroll', function () {
@@ -16,4 +15,13 @@ window.addEventListener('scroll', function () {
         nav.style.opacity = '1';
         nav.classList.remove('fixed');
     }
+});
+
+// function Loading
+let loader = document.querySelector('.loader') ;
+ 
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loader.style.display = 'none';
+  },2600);
 });
