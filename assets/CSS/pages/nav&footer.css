@@ -140,21 +140,10 @@ body {
 
 /* navbar */
 .navbar {
-    width:90%;
-    margin:auto;
-    top:3%;
-    left:3%;
-    transform: translateX(3%);
-    position: fixed;
-    padding: 10px 0;
+    width:100%;
+    padding: 15px 0;
     background-color: transparent;
     transition: all 0.6s ease;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    opacity: 1;
-    
-
     .container {
         width:95%;
         margin: 0 auto;
