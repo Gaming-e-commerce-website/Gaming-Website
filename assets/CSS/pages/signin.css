@@ -16,7 +16,7 @@ header {
 }
 
 .back {
-  width: auto;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -48,6 +48,7 @@ header {
 .back:hover i {
   color: var(--first-color);
   border: 1px solid var(--first-color);
+  transform: translateX(-5px);
 }
 
 .back:hover a {
@@ -88,10 +89,10 @@ main {
 .login-box {
   background-color: var(--white);
   padding: 40px 50px;
-  width: 70%;
+  width: 73%;
   border-radius: 8px;
   border: 2px solid var(--first-color);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow:0px 3px 12px   #89ccf9;
 }
 
 .big-container h2 {
@@ -118,7 +119,7 @@ main {
   outline: none;
 }
 
-input:focus {
+.login-box input:focus {
   box-shadow: 0px 2.1px 5px #9ba1f7;
   /* box-shadow: none; */
   outline: none;

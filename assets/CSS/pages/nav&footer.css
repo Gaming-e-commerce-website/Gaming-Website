@@ -1,11 +1,10 @@
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 :root {
     --first-font: Raleway, sans-serif;
     --text-color: #007aff;
     --body-text-color: #ffffff;
-    --body-bg-color: #0f1114;
+    --body-bg-color: #010101;
     --primary-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
     --primary-text-color: #ffffff;
     --secondary-color: #007aff;
@@ -38,7 +37,6 @@
     --h6: normal 500 18px / 1.1 var(--first-font);
     --common-text: normal 400 16px / 1.4 var(--first-font);
 }
-
 * {
     margin: 0;
     padding: 0;

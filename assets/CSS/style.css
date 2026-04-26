@@ -5,7 +5,7 @@
     --first-font: Raleway, sans-serif;
     --text-color: #007aff;
     --body-text-color: #ffffff;
-    --body-bg-color: #0f1114;
+    --body-bg-color: #010101;
     --primary-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
     --primary-text-color: #ffffff;
     --secondary-color: #007aff;
@@ -343,7 +343,10 @@ body {
 
 /* ============================ */
 /* start main */
-
+main{
+    height:100vh;
+    
+}
 /* end main */
 /* =========================== */
 /* start footer */
