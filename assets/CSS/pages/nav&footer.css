@@ -12,8 +12,8 @@
     --secondary-text-color: #007aff;
     --first-color: #0098ff;
     --second-color: #131518;
-    --third-color: #1f2023;
-    --fourth-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
+    --third-color:  linear-gradient(148deg, rgba(1, 152, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%);;
+    --fourth-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);;
     --fifth-color: #7c34c8;
     --pro-btn-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
     --pro-btn-hover-color: #ffffff;

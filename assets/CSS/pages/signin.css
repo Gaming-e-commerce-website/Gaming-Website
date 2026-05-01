@@ -24,7 +24,6 @@ header {
   margin: 0 0 35px 0;
   transition: all 0.3s ease;
 }
-
 .back a {
   color: var(--body-text-color);
   text-decoration: none;
@@ -88,7 +87,7 @@ main {
 
 .login-box {
   background-color: var(--white);
-  padding: 40px 50px;
+  padding: 50px 50px;
   width: 73%;
   border-radius: 8px;
   border: 2px solid var(--first-color);
@@ -147,7 +146,7 @@ main {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
-  color: var(--third-color);
+  color: var(--black);
 }
 
 label {
@@ -155,7 +154,7 @@ label {
   margin-bottom: 5px;
   font-size: 15px;
   font-weight: bold;
-  color: var(--third-color);
+  color: var(--black);
 }
 
 .login-box form {
