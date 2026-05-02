@@ -15,3 +15,9 @@ window.addEventListener('scroll', function () {
         nav.classList.remove('fixed');
     }
 });
+// loading
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.querySelector('.page-loader').classList.add('hidden');
+    }, 2600);
+});
