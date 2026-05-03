@@ -113,8 +113,7 @@
                             fill="#D7DBE0"></path>
                     </svg>
                     <p>Your cart is Empty</p>
-                    <a href="../Pages/Products.html"><i class="fa-solid fa-arrow-left-long"></i> CONTINUE SHOPPING</a
-                        href="Pages/Products.html">
+                    <a href="#"><i class="fa-solid fa-arrow-left-long"></i> CONTINUE SHOPPING</a>
 
                 </div>
             </div>
@@ -130,9 +129,11 @@
             <div class="content">
                 <div class="container">
                     <div class="item">
-                        <div class="image"></div>
+                        <div class="image">
+                            <img src="../assets/images/Products/11-2.webp" alt="">
+                        </div>
                         <div class="name">
-                            <h2></h2>
+                            <h2> </h2>
                             <p>color:white</p>
                             <p id="price"></p>
                         </div>
@@ -142,7 +143,7 @@
                             <button class="plus">+</button>
                         </div>
                         <div class="Total">
-                            <p></p>
+                            <p>3000$</p>
                         </div>
                         <div class="remove">
                             <i class="fa-solid fa-trash"></i>
@@ -161,10 +162,10 @@
     <section class="sideCart">
         <div class="content">
             <div class="cart">
-                <nav>
+                <div class="nav">
                     <h2>Your Cart</h2>
                     <div class="close"><i class="fa-solid fa-xmark"></i></div>
-                </nav>
+                </div>
                 <div class="content-empty">
                     <svg width="80" height="80" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -196,7 +197,32 @@
                     <a href="Pages/Products.html"><i class="fa-solid fa-arrow-left-long"></i> CONTINUE SHOPPING</a
                         href="Pages/Products.html">
                 </div>
-                <footer></footer>
+                <div class="full">
+                    <div class="item">
+                        <div class="image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="info">
+                            <h2>Fuck youu</h2>
+                            <div class="quantity">
+                                <button class="minus">-</button>
+                                <input type="number" min="1" value="1" max="10" readonly>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="remove">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- total items  and price-->
+                <div class="price">
+                    <P>Total Items :<span id="count"> 2</span></P>
+                    <P>Total Price :<span id="price"> 300$</span></P>
+                </div>
+                <a class="btn" href="../Pages/cartpage.html">Veiw Cart</a>
+    
+    
             </div>
         </div>
     </section>
