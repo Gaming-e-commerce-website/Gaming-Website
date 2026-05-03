@@ -1,4 +1,4 @@
- 
+
 // function Loading
 const msgs = ['Booting system...', 'Loading products...', 'Fetching prices...', 'Syncing inventory...', 'Ready to shop!'];
 let hp = 0;
@@ -42,6 +42,15 @@ window.addEventListener('load', () => {
         document.getElementById('mainContent').style.opacity = '1';
     }, 2800);
 });
+
+
+// pages loading
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.querySelector('.page-loader').classList.add('hidden');
+    }, 1500);
+});
+
 
 
 // header slider 

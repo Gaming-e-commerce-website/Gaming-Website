@@ -1,3 +1,6 @@
+/* ===================== */
+/*       Variables       */
+/* ===================== */
 :root {
     --bg-black: #000000;
     --text-gray: #b0b0b0;
@@ -8,100 +11,112 @@
 body {
     margin: 0;
     font-family: var(--font-main);
-    color: #333;
+    color: var(--white);
     line-height: 1.6;
 }
+
 section {
     width: 100%;
     background-color: white;
 }
+
+body {
+    background-color: white;
+}
+
+
+
+/* ===================== */
+/*      Container        */
+/* ===================== */
 .container {
     width: 75%;
     margin: 0 auto;
     padding: 0 20px;
-   
 }
 
-/* Header Styles */
+/* ===================== */
+/*        Header         */
+/* ===================== */
 header {
     width: 100%;
     background-color: #010101;
     color: var(--white);
     padding: 100px 0;
     font-family: var(--first-font);
-
-    .container {
-        width: 75%;
-        margin: auto;
-
-        .back {
-            width: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            cursor: pointer;
-            margin: 0 0 35px 0;
-            transition: all 0.3s ease;
-
-            a {
-                color: var(--body-text-color);
-                text-decoration: none;
-                font-size: 14px;
-                transition: all 0.3s ease;
-            }
-
-            i {
-                margin-right: 15px;
-                border-radius: 50%;
-                border: 1px solid var(--white);
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 14px;
-                transition: all 0.3s ease;
-            }
-
-            &:hover i {
-                color: var(--first-color);
-                border: 1px solid var(--first-color);
-                transform: translateX(-5px);
-            }
-
-            &:hover a {
-                color: var(--first-color);
-                text-decoration: underline;
-            }
-        }
-
-        h1 {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-
-        p {
-            margin: 20px 0 0 0;
-            font-size: 15px;
-            max-width: 650px;
-            line-height: 1.6;
-        }
-    }
 }
 
-/* Main Content Layout */
+header .container .back {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin: 0 0 35px 0;
+    transition: all 0.3s ease;
+}
+
+header .container .back a {
+    color: var(--body-text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+header .container .back i {
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+header .container .back:hover i {
+    color: var(--first-color);
+    border: 1px solid var(--first-color);
+    transform: translateX(-5px);
+}
+
+header .container .back:hover a {
+    color: var(--first-color);
+    text-decoration: underline;
+}
+
+header .container h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+header .container p {
+    margin: 20px 0 0 0;
+    font-size: 15px;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+/* ===================== */
+/*     Main Content      */
+/* ===================== */
 .main-content {
-    padding: 60px;
-    padding: 100px;
-    width: 100% !important;
+    width: 75% !important;
+    margin: 0 auto;
+    padding: 80px 20px;
     background-color: white;
-  
+}
+.out{
+    width: 100%;
+    background-color: var(--white);
 }
 
 .flex-wrapper {
     display: flex;
     gap: 50px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .form-section {
@@ -112,28 +127,31 @@ header {
     flex: 1;
 }
 
-/* Form Styles */
+/* ===================== */
+/*     Form Heading      */
+/* ===================== */
 h2 {
-   
-  padding-bottom: 50px;
-  font-size: 60px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--black);
-  background: var(--fourth-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    padding-bottom: 30px;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: var(--fourth-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
+/* ===================== */
+/*      Form Styles      */
+/* ===================== */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .input-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 0.9rem;
     color: var(--body-bg-color);
 }
@@ -142,26 +160,26 @@ h2 {
 .input-group textarea {
     font-family: inherit;
     box-sizing: border-box;
-     width: 100%;
-  padding: 15px;
-  margin: 8px 0px 30px;
-  border-radius: 5px;
-  transition: all 0.6s ease;
-  /* border: 1px solid transparent; */
-  border: 1.5px solid var(--first-color);
-  outline: none;
+    width: 100%;
+    padding: 15px;
+    margin: 4px 0 16px;
+    border-radius: 5px;
+    transition: all 0.6s ease;
+    border: 1.5px solid var(--first-color);
+    outline: none;
 }
+
 input:focus,
-textarea:focus {box-shadow: 0px 2.1px 5px #9ba1f7;
-  /* box-shadow: none; */
-  outline: none;
-  border: 1px solid transparent;
+textarea:focus {
+    box-shadow: 0px 2.1px 5px #9ba1f7;
+    outline: none;
+    border: 1px solid transparent;
 }
 
 .captcha-text {
     font-size: 0.85rem;
     color: #666;
-    margin: 20px 0;
+    margin: 12px 0 20px;
 }
 
 .captcha-text a {
@@ -170,7 +188,9 @@ textarea:focus {box-shadow: 0px 2.1px 5px #9ba1f7;
     text-decoration: none;
 }
 
-/* Gradient Button */
+/* ===================== */
+/*    Gradient Button    */
+/* ===================== */
 .submit-btn {
     background: linear-gradient(90deg, #0099ff 0%, #7a33cc 100%);
     color: white;
@@ -187,21 +207,36 @@ textarea:focus {box-shadow: 0px 2.1px 5px #9ba1f7;
     opacity: 0.9;
 }
 
-/* Map Styling */
+/* ===================== */
+/*     Map Styling       */
+/* ===================== */
 .map-container {
     width: 100%;
     height: 500px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
+/* ===================== */
+/*      Responsive       */
+/* ===================== */
 @media (max-width: 768px) {
+    .main-content {
+        width: 90% !important;
+        padding: 50px 20px;
+    }
+
     .flex-wrapper {
         flex-direction: column;
+        gap: 30px;
     }
-    .contact-header h1 {
-        font-size: 2.2rem;
+
+    h2 {
+        font-size: 36px;
+    }
+
+    header .container .back {
+        width: 50%;
     }
 }
