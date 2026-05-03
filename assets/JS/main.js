@@ -1,21 +1,4 @@
-// Navbar
-let nav = document.querySelector('#nav');
-
-window.addEventListener('scroll', function () {
-    if (window.scrollY > 900) {
-        nav.classList.add('fixed');
-        nav.style.opacity = '1';
-
-    }
-    else if (window.scrollY > 100 && window.scrollY <= 900) {
-        nav.style.opacity = '0';
-        nav.classList.remove('fixed');
-    }
-    else {
-        nav.style.opacity = '1';
-        nav.classList.remove('fixed');
-    }
-});
+ 
 // function Loading
 const msgs = ['Booting system...', 'Loading products...', 'Fetching prices...', 'Syncing inventory...', 'Ready to shop!'];
 let hp = 0;
@@ -104,10 +87,27 @@ cartIcon.onclick =function(){
     cart.style.right= "0%";
     document.body.style.overflow = "hidden";
 }
-
+// closing side cart
 closeCart.onclick = function(){
     cart.style.right= "-50%%";
     sideCart.style.opacity = "0" ;
     sideCart.style.visibility = "hidden";
     document.body.style.overflow = "auto"; 
 }
+
+const plus = document.querySelector(".plus");
+const minus = document.querySelector(".minus");
+const input = document.querySelector(".quantity input");
+
+plus.addEventListener("click", function (e) {
+    e.preventDefault();  
+    input.value = parseInt(input.value) + 1;
+});
+
+minus.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (input.value > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+});

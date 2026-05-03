@@ -1,12 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--white);
+  font-family: var(--first-font)
 }
 
 
@@ -70,8 +65,7 @@ header p {
 }
 
 header .container {
-  width: 90%;
-  max-width: 1000px;
+  width: 75%;
   margin: auto;
 }
 
@@ -88,7 +82,7 @@ main {
 }
 
 .big-container {
-  width: 90%;
+  width:  75%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -114,7 +108,7 @@ main {
   padding: 50px;
   width: 75%;
   border-radius: 8px;
-  border: 1px solid #999;
+  border: 2px solid var(--first-color);
   box-shadow: 0px 3px 12px #89ccf9;
 }
 
