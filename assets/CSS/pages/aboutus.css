@@ -1,0 +1,389 @@
+
+/* header  */
+header {
+    width: 100%;
+    background-color: #010101;
+    color: var(--white);
+    padding: 100px 0;
+    font-family: var(--first-font);
+
+    .container {
+        width: 75%;
+        margin: auto;
+
+        .back {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            margin: 0 0 35px 0;
+            transition: all 0.3s ease;
+
+            a {
+                color: var(--body-text-color);
+                text-decoration: none;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+
+            i {
+                margin-right: 15px;
+                border-radius: 50%;
+                border: 1px solid var(--white);
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+
+            &:hover i {
+                color: var(--first-color);
+                border: 1px solid var(--first-color);
+                transform: translateX(-5px);
+            }
+
+            &:hover a {
+                color: var(--first-color);
+                text-decoration: underline;
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 20px 0 0 0;
+            font-size: 15px;
+            max-width: 650px;
+            line-height: 1.6;
+        }
+    }
+}
+/* end header */
+
+section{
+    width: 100%;
+}
+
+/* Container Utility */
+.container ,.main-container{
+    width: 75%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+    font-family: var(--first-font);
+}
+
+/* Who We Are Styles */
+.who-we-are {
+     
+    padding: 100px 0;
+    background-color: #fff; /* الخلفية بيضاء حسب الصورة */
+    color: #000;
+
+}
+
+.text-content h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: var(--first-font);
+}
+
+.text-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 500px;
+    font-family: var(--first-font);
+}
+
+/* Stats Cards */
+.stats-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #c0dcfc 0%, #ffffff 100%);
+    border: 1px solid #7db2f8;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #007bff, #5905e1);
+    -webkit-background-clip: text;
+    /* بيخلي الجريديان ينطبق علىعلى الكلام والايقونة بس */
+    -webkit-text-fill-color: transparent;
+    /* بيخلي لون الايقونة الاصلي شفاف عشان يظهر ال الجريديانت */
+}
+
+.card h2 {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(to right, #007bff, #5905e1);
+    -webkit-background-clip: text;
+    /* بيخلي الجريديان ينطبق علىعلى الكلام والايقونة بس */
+    -webkit-text-fill-color: transparent;
+    /* بيخلي لون الايقونة الاصلي شفاف عشان يظهر ال الجريديانت */
+    margin-bottom: 10px;
+    font-family: var(--first-font);
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    font-family: var(--first-font);
+}
+
+/* Making History Styles */
+.making-history {
+    padding: 0px 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.gradient-text {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-family: var(--first-font);
+}
+
+/* الجزء الملون في العنوان */
+.gradient-text {
+    background: linear-gradient(to right, #1283fc, #370784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* الجريديان يطبق على الحروف بس */
+    display: inline-block;
+    font-family: var(--first-font);
+}
+
+.gradient-text span {
+    color: #000;
+    font-family: var(--first-font);
+    -webkit-text-fill-color: #000; /* لكسر الـ gradient */
+}
+
+.making-history p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    font-family: var(--first-font);
+}
+
+
+
+/* Foundation Section Styles */
+.foundation-section {
+    padding: 80px 0;
+    background-color: #fff;
+    color: #000;
+    font-family: var(--first-font);
+}
+
+/* استخدام الـ Flexbox لترتيب الصورة والنص بجانب بعض */
+.foundation-section .flex-row {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* مسافة بين الصورة والنص */
+}
+
+.image-content {
+    flex: 1;
+}
+
+.rounded-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* زوايا منحنية كما في الصورة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف للصورة */
+}
+
+.foundation-section .text-content {
+    flex: 1;
+}
+
+.foundation-section .text-content h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #111;
+    font-family: var(--first-font);
+}
+
+.foundation-section .text-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: var(--first-font);
+}
+
+/* Responsive: لضمان ظهورهم فوق بعض في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .foundation-section .flex-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .foundation-section .text-content h2 {
+        font-size: 28px;
+        font-family: var(--first-font);
+    }
+}
+
+/* Expert Team Section Styles */
+.team-section {
+    /* padding: 80px 0; */
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    font-family: var(--first-font);
+}
+
+.team-section .text-content {
+    flex: 1;
+}
+
+.team-section .text-content h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-family: var(--first-font);
+}
+
+.team-section .text-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+    font-family: var(--first-font);
+}
+
+.team-section .image-content {
+    flex: 1;
+}
+
+/* زر العودة للأعلى (الموجود في أسفل يمين الصورة) */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4); /* ظل أزرق خفيف زي اللي في الصورة */
+    border: 2px solid #007bff; /* إطار أزرق رفيع */
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top:hover {
+    background-color: #007bff;
+    transform: translateY(-5px);
+}
+
+/* تحسين الموبايل */
+@media (max-width: 768px) {
+    .flex-row-reverse {
+        flex-direction: column; /* يرجعهم تحت بعض في الشاشات الصغيرة */
+        text-align: center;
+    }
+}
+
+
+/* Foundation Section Styles */
+.foundation-section {
+    padding: 80px 0;
+    background-color: #fff;
+    color: #000;
+}
+
+/* استخدام الـ Flexbox لترتيب الصورة والنص بجانب بعض */
+.foundation-section .flex-row {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* مسافة بين الصورة والنص */
+}
+
+.image-content {
+    flex: 1;
+}
+
+.rounded-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* زوايا منحنية كما في الصورة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف للصورة */
+}
+
+.foundation-section .text-content {
+    flex: 1;
+}
+
+.foundation-section .text-content h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #111;
+    font-family: var(--first-font);
+}
+
+.foundation-section .text-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: var(--first-font);
+}
+
+/* Responsive: لضمان ظهورهم فوق بعض في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .foundation-section .flex-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .foundation-section .text-content h2 {
+        font-size: 28px;
+    }
+}
+

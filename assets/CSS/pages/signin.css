@@ -5,6 +5,7 @@ body {
    
 }
 
+/* header */
 header {
   background-color: #010101;
   color: var(--white);
@@ -62,7 +63,9 @@ header p {
   max-width: 500px;
   line-height: 1.6;
 }
+/* end */
 
+/* main */
 main {
   width: 100%;
   background-color: var(--white);
