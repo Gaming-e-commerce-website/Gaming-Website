@@ -887,16 +887,7 @@ main{
        }
     }
   }
-   .productCards {
-                width: 100%;
-                height: 100%;
-                padding: 20px 0px 20px 14px;
-                /* display: flex;
-                flex-wrap: wrap; */
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                column-gap: 16px;
-                position: relative;
+
 
 .products{
   width: 100%;
@@ -1087,7 +1078,7 @@ main{
 
 
             }
-}
+
 /* end main */
 /* =========================== */
 /* product veiw */

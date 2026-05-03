@@ -118,11 +118,13 @@ function renderCartPage() {
 // ---------- ORDER BUTTON ----------
 if (orderBtn) {
     orderBtn.addEventListener('click', () => {
+        //  window.alert(" Nintendo Switch Lite is ordered successfully");
         if (cartItems.length === 0) return;
         showToast('🎮 Order placed successfully! Thank you!');
         cartItems = [];
         saveCart();
         setTimeout(renderCartPage, 1600);
+       
     });
 }
 
