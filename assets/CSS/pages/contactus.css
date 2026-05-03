@@ -12,7 +12,7 @@ body {
     margin: 0;
     font-family: var(--font-main);
     color: var(--white);
-    line-height: 1.6;
+    /* line-height: 1.6; */
 }
 
 section {
@@ -130,7 +130,8 @@ header .container p {
 /* ===================== */
 /*     Form Heading      */
 /* ===================== */
-h2 {
+.form-section{
+    h2 {
     padding-bottom: 30px;
     font-size: 48px;
     font-weight: 600;
@@ -139,6 +140,7 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
 }
 
 /* ===================== */
