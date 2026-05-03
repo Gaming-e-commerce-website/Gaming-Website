@@ -1,12 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--white);
+  font-family: var(--first-font)
 }
 
 
@@ -70,8 +65,7 @@ header p {
 }
 
 header .container {
-  width: 90%;
-  max-width: 1000px;
+  width: 75%;
   margin: auto;
 }
 
@@ -88,7 +82,7 @@ main {
 }
 
 .big-container {
-  width: 90%;
+  width:  75%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
