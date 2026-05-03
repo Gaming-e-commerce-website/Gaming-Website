@@ -143,9 +143,94 @@ main {
       width:75%;
       margin: auto;
       .item{
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color:black;
+        padding:25px 0px;
+        margin-top: 20px;
+           .image{
+            width:200px;
+            height:100px;
+            border-radius:0px 30px;
+            border:1px solid var(--first-color);
+            img{
+              width:100%;
+              height:100%;
+            }
+           }
+          .quantity {
+          width: 200px;
+          border: 1px solid #838383;
+          border-radius: 5px;
+          padding: 10px 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          input {
+            color: #838383;
+            font-weight: 500;
+            font-size: 14px;
+            background-color: transparent;
+            width: 100%;
+            outline: none;
+            border: none;
+            text-align: center;
+            &[type='number']::-webkit-outer-spin-button,
+            &[type='number']::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            cursor: pointer;
+          }
+          button {
+            color: #838383;
+            width: 30%;
+            font-weight: 500;
+            font-size: 14px;
+            background-color: transparent;
+            border: none;
+            background-color: none;
+            cursor: pointer;
+          }
+        }
+        .Total{
+          width:100px;
+          font-size: 20px;
+          font-weight:600;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-left: 30px;
+        }
+        .remove{
+          width:200px;
+          color:red;
+          margin-right: 30px;
+          text-align: end;
+        }
       }
     }
   }
- }
+  .order{
+    width:50%;
+    margin: 0 auto;
+    margin-top: 70px;
+    button{
+      width:100%;
+      border:none;
+      background:black;
+      border-radius:10px;
+      color:white;
+      font-size:20px;
+      font-weight:500;
+      padding:15px 10px;
+      cursor: pointer;
+      transition: all 0.6s ease;
+      &:hover{
+        opacity: 0.95;
+      }
+    }
+  }
+}
 }

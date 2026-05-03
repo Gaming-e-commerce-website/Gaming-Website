@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
     }, 2800);
 });
 
-
+ 
 // header slider 
 
 const header = document.querySelector('header');
@@ -106,7 +106,6 @@ plus.addEventListener("click", function (e) {
 
 minus.addEventListener("click", function (e) {
     e.preventDefault();
-
     if (input.value > 1) {
         input.value = parseInt(input.value) - 1;
     }
