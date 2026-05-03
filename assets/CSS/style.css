@@ -844,6 +844,49 @@ header {
 main{
   width:100%;
   height:auto;
+  .sub{
+    width:100%;
+    height:auto;
+    background-color: white;
+    padding:80px;
+    .container{
+      width:75%;
+      height:auto;
+      margin:auto;
+      background-color: inear-gradient(148deg, rgba(1, 152, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%);;
+      border: 1px solid var(--first-color);
+      border-radius: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--box-shadow);
+       .content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 30px;
+        gap:30px;
+        .box{
+          width:150px;
+          text-align: center;
+          padding:10px;
+          border-radius:8px;
+          color:white;
+          background:var(--fourth-color);
+        }
+        h2{
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 40px;
+    text-transform: capitalize;
+        }
+        p{
+          color:black;
+        }
+       }
+    }
+  }
    .productCards {
                 width: 100%;
                 height: 100%;
@@ -1353,6 +1396,7 @@ main{
          &::-webkit-scrollbar {
     display: none;                
 }
+
       .item{
         position: relative;
         width:100%;

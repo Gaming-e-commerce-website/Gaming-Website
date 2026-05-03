@@ -788,8 +788,11 @@ main {
         }
       }
       .full{
-        width:100%;
+       width:100%;
         height: 70vh;
+         overflow: scroll;
+         &::-webkit-scrollbar {
+    display: none; }
          
       .item{
         position: relative;
