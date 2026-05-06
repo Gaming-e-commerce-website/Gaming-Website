@@ -28,13 +28,13 @@ function clearError(div) {
 function validateFirstName() {
     const value = firstNameInput.value.trim();
     if (value === "") {
-        showError(firstNameError, "⚠ First name is required.");
+        showError(firstNameError, "First name is required.");
         return false;
     } else if (value.length < 2) {
-        showError(firstNameError, "⚠ First name must be at least 2 characters.");
+        showError(firstNameError, "First name must be at least 2 characters.");
         return false;
     } else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(value)) {
-        showError(firstNameError, "⚠ First name must contain letters only.");
+        showError(firstNameError, "First name must contain letters only.");
         return false;
     }
     clearError(firstNameError);
@@ -44,13 +44,13 @@ function validateFirstName() {
 function validateLastName() {
     const value = lastNameInput.value.trim();
     if (value === "") {
-        showError(lastNameError, "⚠ Last name is required.");
+        showError(lastNameError, "Last name is required.");
         return false;
     } else if (value.length < 2) {
-        showError(lastNameError, "⚠ Last name must be at least 2 characters.");
+        showError(lastNameError, "Last name must be at least 2 characters.");
         return false;
     } else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(value)) {
-        showError(lastNameError, "⚠ Last name must contain letters only.");
+        showError(lastNameError, "Last name must contain letters only.");
         return false;
     }
     clearError(lastNameError);
@@ -61,10 +61,10 @@ function validateEmail() {
     const value = emailInput.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (value === "") {
-        showError(emailError, "⚠ Email is required.");
+        showError(emailError, "Email is required.");
         return false;
     } else if (!emailRegex.test(value)) {
-        showError(emailError, "⚠ Please enter a valid email address (e.g. user@example.com).");
+        showError(emailError, "Please enter a valid email address (e.g. user@example.com).");
         return false;
     }
     clearError(emailError);
@@ -74,16 +74,16 @@ function validateEmail() {
 function validatePassword() {
     const value = passwordInput.value;
     if (value === "") {
-        showError(passError, "⚠ Password is required.");
+        showError(passError, "Password is required.");
         return false;
     } else if (value.length < 6) {
-        showError(passError, "⚠ Password must be at least 6 characters.");
+        showError(passError, "Password must be at least 6 characters.");
         return false;
     } else if (!/[A-Z]/.test(value)) {
-        showError(passError, "⚠ Password must contain at least one uppercase letter.");
+        showError(passError, "Password must contain at least one uppercase letter.");
         return false;
     } else if (!/[0-9]/.test(value)) {
-        showError(passError, "⚠ Password must contain at least one number.");
+        showError(passError, "Password must contain at least one number.");
         return false;
     }
     clearError(passError);
@@ -118,7 +118,7 @@ signupForm.addEventListener("submit", function (e) {
     const alreadyExists = existingUsers.find((user) => user.email === email);
 
     if (alreadyExists) {
-        showError(submitError, "⚠ This email is already registered. Please sign in.");
+        showError(submitError, "This email is already registered. Please sign in.");
         return;
     }
 
@@ -133,7 +133,7 @@ signupForm.addEventListener("submit", function (e) {
     localStorage.setItem("gamingUsers", JSON.stringify(existingUsers));
 
     clearError(submitError);
-    submitError.textContent = "✅ Account created successfully! Redirecting to login...";
+    submitError.textContent = "Account created successfully! Redirecting to login...";
     submitError.style.color = "#38a169";
     submitError.style.fontSize = "14px";
     submitError.style.marginTop = "10px";
