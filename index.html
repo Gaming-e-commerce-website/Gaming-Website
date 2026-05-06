@@ -18,13 +18,6 @@
     <!-- Loading -->
 
     <div class="home-loader" id="homeLoader">
-        <!-- <div class="hl-grid"></div>
-        <div class="hl-scan"></div>
-        <div class="hl-blob1"></div>
-        <div class="hl-blob2"></div>
-        <div class="hl-blob3"></div>
-        <div class="hl-topbar"></div>
-        <div class="hl-botbar"></div> -->
         <!-- ring system -->
         <div class="ring-sys">
             <div class="ring r1">
@@ -43,19 +36,6 @@
                 </svg>
             </div>
         </div>
-
-        <!-- title -->
-        <!-- <div class="hl-title-block">
-            <div class="hl-eyebrow">Welcome to</div>
-            <div class="hl-title-wrap">
-                <div class="hl-title">GAMMING E-commerse</div>
-                <div class="hl-title hl-title-glow" aria-hidden="true">GAMING</div>
-            </div>
-            <div class="hl-tagline">Your Ultimate Gaming Store</div>
-        </div> -->
-
-
-
         <!-- progress bar -->
         <div class="hl-prog-block">
             <div class="hl-prog-header">
@@ -107,7 +87,7 @@
                 </div>
                 <div>
                     <i class="fa-solid fa-cart-arrow-down"></i>
-                    <span class="circle">0</span>
+                    <span id="count-items" class="circle">0</span>
                 </div>
             </div>
         </div>
@@ -166,96 +146,201 @@
     <!-- main -->
     <main>
 
-        <!-- products -->
+        <!-- best seller products -->
+        <div class="title">
+            <h2> <span>Best Seller</span> for the Week</h2>
+            <a href="Pages/Products.html">Show Products</a>
+        </div>
         <section class="products">
-            <!-- <h2>Best seller for this week</h2> -->
-            <div class="container">
+            <div class="cards">
                 <!-- product 1 -->
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img class="item-img" src="../assets/images/Products/1-1.png" alt="">
-                                <img class="inner-img" src="../assets/images/Products/1-2.webp" alt="">
-                                <div class="icons">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-regular fa-eye " id="veiw"></i>
-                                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/1-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/1-2.webp" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
                             </div>
-                            <div class="info">
-                                <h2>Nintendo Switch Lite</h2>
-                            </div>
-                            <p>Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness;
-                                Tempered glass durability rated at 9H hardness to protect from everyday scratches.</p>
-                            <div class="card-price">
-                                <h3>$543.00</h3>
-                            </div>
-                            <button id="ADD">ADD TO CART</button>
                         </div>
-                    </div>
-                    <!-- product 2 -->
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img class="item-img" src="../assets/images/Products/2-1.png" alt="">
-                                <img class="inner-img" src="../assets/images/Products/2-2.png" alt="">
-                                <div class="icons">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-regular fa-eye " id="veiw"></i>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h2>Rubber Keycaps</h2>
-                            </div>
-                            <p>
-                                Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches
-                                or any new switches that have a + under your keycaps. Installing our
-                            </p>
-                            <div class="card-price">
-                                <h3>$580.00</h3>
-                            </div>
-                            <button id="ADD">ADD TO CART</button>
+                        <div class="info">
+                            <h2>Nintendo Switch Lite</h2>
                         </div>
-                    </div>
-                    <!-- product 3 -->
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img class="item-img" src="../assets/images/Products/3-1.png" alt="">
-                                <img class="inner-img" src="../assets/images/Products/3-2.png" alt="">
-                                <div class="icons">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-regular fa-eye " id="veiw"></i>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h2>Alien ware Monitor T 46</h2>
-                            </div>
-                            <p>
-                                Exceptional Full HD IPS 21.5 Inch Ultra Thin Display : Enjoy immaculate image quality
-                                with 1920x1080 resolution and 178 degree wide viewing angles I Zero Frame </p>
-                            <div class="card-price">
-                                <h3>$850.00</h3>
-                            </div>
-                            <button id="ADD">ADD TO CART</button>
+                        <p>Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness;
+                            Tempered glass durability rated at 9H hardness to protect from everyday scratches.</p>
+                        <div class="card-price">
+                            <h3>$543.00</h3>
                         </div>
+                        <button id="ADD">ADD TO CART</button>
                     </div>
+                </div>
+                <!-- product 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/2-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/2-2.png" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Rubber Keycaps</h2>
+                        </div>
+                        <p>
+                            Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches
+                            or any new switches that have a + under your keycaps. Installing our
+                        </p>
+                        <div class="card-price">
+                            <h3>$580.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- product 3 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/3-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/3-2.png" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Alien ware Monitor T 46</h2>
+                        </div>
+                        <p>
+                            Exceptional Full HD IPS 21.5 Inch Ultra Thin Display : Enjoy immaculate image quality
+                            with 1920x1080 resolution and 178 degree wide viewing angles I Zero Frame </p>
+                        <div class="card-price">
+                            <h3>$850.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- product 4 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/4-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/4-2.webp" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Colossus Ergonomic</h2>
+                        </div>
+                        <p>
+                            ERGONOMICALLY DESIGNED FOR HARDCORE GAMING : From its unique contours and angled seat
+                            edges, to its fully adjustable recline, tilt, and height, the Dr Luxur </p>
+                        <div class="card-price">
+                            <h3>$356.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- product 5 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/5-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/5-2.webp" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Cloud Alpha Gaming</h2>
+                        </div>
+                        <p>HyperX Dual Chamber Drivers for more distinction and less distortion. Signature
+                            Award-Winning HyperX comfort. Durable aluminum frame with an expanded</p>
+                        <div class="card-price">
+                            <h3>$530.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- product 6 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/6-1.webp" alt="">
+                            <img class="inner-img" src="../assets/images/Products/6-2.webp" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Raptor Gameing Z95</h2>
+                        </div>
+                        <p>Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a
+                            variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly with</p>
+                        <div class="card-price">
+                            <h3>$896.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- product 7 -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="item-img" src="../assets/images/Products/7-1.png" alt="">
+                            <img class="inner-img" src="../assets/images/Products/7-2.png" alt="">
+                            <div class="icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-eye " id="veiw"></i>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Gaming Chair for Gamers</h2>
+                        </div>
+                        <p>Have back issues or don’t want to develop them? This adjustable office chair includes
+                            Cushion Foam Padded support and a recline feature that allows you to tilt the</p>
+                        <div class="card-price">
+                            <h3>$560.00</h3>
+                        </div>
+                        <button id="ADD">ADD TO CART</button>
+                    </div>
+                </div>
             </div>
         </section>
-       <section class="sub">
-        <div class="container">
-            <div class="content">
-                <div class="box">
-                    <p>Subsecribe Us </p>
-                </div>
-                <h2>Subscribe newsletter and get -20% off</h2>
-                <p>Almost three-quarters of dedicated PC gamers say their main motivation to upgrade is improving gaming experiences</p>
-               
-            </div>
-            <div class="image">
-                <img src="assets/images/files/subscriber-img.webp" alt="">
-            </div>
+        <div class="btns">
+            <p id="btn1"></p>
+            <p id="btn2"></p>
+            <p id="btn3"></p>
+            <p id="btn4"></p>
+            <p id="btn5"></p>
+            <p id="btn6"></p>
+            <p id="btn7"></p>
         </div>
-       </section>
+
+        <!-- subsicribe section  -->
+        <section class="sub">
+            <div class="container">
+                <div class="content">
+                    <div class="box">
+                        <p>Subsecribe Us </p>
+                    </div>
+                    <h2>Subscribe newsletter and get -20% off</h2>
+                    <p>Almost three-quarters of dedicated PC gamers say their main motivation to upgrade is improving
+                        gaming experiences</p>
+
+                </div>
+                <div class="image">
+                    <img src="assets/images/files/subscriber-img.webp" alt="">
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- end main -->
     <!-- product veiw -->
@@ -346,7 +431,7 @@
                 <!-- total items  and price-->
                 <div class="price">
                     <P>Total Items :<span id="count"> 2</span></P>
-                    <P>Total Price :<span  id="price"> 300$</span></P>
+                    <P>Total Price :<span id="price"> 300$</span></P>
                 </div>
                 <a class="btn" href="Pages/cartpage.html">Veiw Cart</a>
 

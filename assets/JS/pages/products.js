@@ -73,7 +73,7 @@ function renderSideCart() {
     const emptyDiv = document.querySelector('.sideCart .content-empty');
     const countSpan = document.getElementById('count');
     const priceSpan = document.getElementById('price');
-    const navCartCircle = document.querySelector('.navbar .icons  .fa-cart-arrow-down .circle');
+    const navCartCircle = document.querySelector('#count-cart')
 
     if (!fullDiv) return;
 
