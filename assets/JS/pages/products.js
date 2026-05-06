@@ -35,7 +35,7 @@ window.__PRODUCTS_DATA__ = [
     { id: 6,  name: "Raptor Gaming Z95",          price: 896, img: "../assets/images/Products/6-1.webp",  desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
     { id: 7,  name: "Gaming Chair for Gamers",    price: 560, img: "../assets/images/Products/7-1.png",   desc: "Have back issues or don't want to develop them? This adjustable office chair includes Cushion Foam Padded support and a recline feature." },
     { id: 8,  name: "Electrobot Xtreme Gaming",   price: 468, img: "../assets/images/Products/8-1.png",   desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
-    { id: 9,  name: "VR Headset",                price: 860, img: "../assets/images/Products/9-1.png",   desc: "40MM HD optical resin lens with Focal and IPD adjustments with FOV up to 110 provides best VR Experience. Best-in-class headphones With 3.5mm Jack." },
+    { id: 9,  name: "VR Headset",                 price: 860, img: "../assets/images/Products/9-1.png",   desc: "40MM HD optical resin lens with Focal and IPD adjustments with FOV up to 110 provides best VR Experience. Best-in-class headphones With 3.5mm Jack." },
     { id: 10, name: "Refurbished Xbox Series X",  price: 430, img: "../assets/images/Products/10-1.webp", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
     { id: 11, name: "Radeon™ RX 750 XT",          price: 940, img: "../assets/images/Products/11-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
     { id: 12, name: "Radeon™ RX 750 XT (II)",     price: 560, img: "../assets/images/Products/12-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
@@ -57,6 +57,23 @@ const products = window.__PRODUCTS_DATA__;
 
 
 // ============================================================
+// AUTH CHECK
+// ============================================================
+function isLoggedIn() {
+    return !!localStorage.getItem('loggedInUser');
+}
+
+function requireLogin() {
+    // حفظ الصفحة الحالية عشان نرجعلها بعد الـ sign in
+    localStorage.setItem('redirectAfterLogin', window.location.href);
+    showToast('⚠ Please sign in first to add items to your cart!');
+    setTimeout(() => {
+        window.location.href = '../Pages/Signin.html';
+    }, 1500);
+}
+
+
+// ============================================================
 // CART STATE
 // ============================================================
 let cartItems = JSON.parse(localStorage.getItem('gamingCart')) || [];
@@ -70,10 +87,10 @@ function saveCart() {
 // SIDE CART — RENDER
 // ============================================================
 function renderSideCart() {
-    const fullDiv    = document.querySelector('.sideCart .full');
-    const emptyDiv   = document.querySelector('.sideCart .content-empty');
-    const countSpan  = document.getElementById('count');
-    const priceSpan  = document.getElementById('price');
+    const fullDiv       = document.querySelector('.sideCart .full');
+    const emptyDiv      = document.querySelector('.sideCart .content-empty');
+    const countSpan     = document.getElementById('count');
+    const priceSpan     = document.getElementById('price');
     const navCartCircle = document.querySelector('.navbar .icons .cart .circle');
 
     if (!fullDiv) return;
@@ -118,14 +135,14 @@ function renderSideCart() {
 
     fullDiv.querySelectorAll('.plus').forEach(btn => {
         btn.addEventListener('click', () => {
-            const id = parseInt(btn.dataset.id);
+            const id   = parseInt(btn.dataset.id);
             const item = cartItems.find(i => i.id === id);
             if (item && item.qty < 10) { item.qty++; saveCart(); renderSideCart(); }
         });
     });
     fullDiv.querySelectorAll('.minus').forEach(btn => {
         btn.addEventListener('click', () => {
-            const id = parseInt(btn.dataset.id);
+            const id   = parseInt(btn.dataset.id);
             const item = cartItems.find(i => i.id === id);
             if (item && item.qty > 1) { item.qty--; saveCart(); renderSideCart(); }
         });
@@ -142,9 +159,15 @@ function renderSideCart() {
 
 
 // ============================================================
-// ADD TO CART
+// ADD TO CART  ← بيتحقق من الـ login الأول
 // ============================================================
 function addToCart(productId, qty = 1) {
+    // ── تحقق من تسجيل الدخول ──
+    if (!isLoggedIn()) {
+        requireLogin();
+        return;
+    }
+
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
@@ -165,25 +188,25 @@ function addToCart(productId, qty = 1) {
 // ============================================================
 // SIDE CART — OPEN / CLOSE
 // ============================================================
-const sideCartEl   = document.querySelector('.sideCart');
-const cartEl       = document.querySelector('.sideCart .cart');
-const cartIcon     = document.querySelector('.navbar .container .icons .cart');
-const closeCartEl  = document.querySelector('.sideCart .content .cart .nav .close');
+const sideCartEl  = document.querySelector('.sideCart');
+const cartEl      = document.querySelector('.sideCart .cart');
+const cartIcon    = document.querySelector('.navbar .container .icons .cart');
+const closeCartEl = document.querySelector('.sideCart .content .cart .nav .close');
 
 function openSideCart() {
     if (!sideCartEl) return;
-    sideCartEl.style.opacity    = '1';
-    sideCartEl.style.visibility = 'visible';
-    cartEl.style.right          = '0%';
+    sideCartEl.style.opacity     = '1';
+    sideCartEl.style.visibility  = 'visible';
+    cartEl.style.right           = '0%';
     document.body.style.overflow = 'hidden';
 }
 
 function closeSideCart() {
     if (!sideCartEl) return;
-    cartEl.style.right           = '-50%';
-    sideCartEl.style.opacity     = '0';
-    sideCartEl.style.visibility  = 'hidden';
-    document.body.style.overflow = 'auto';
+    cartEl.style.right            = '-50%';
+    sideCartEl.style.opacity      = '0';
+    sideCartEl.style.visibility   = 'hidden';
+    document.body.style.overflow  = 'auto';
 }
 
 if (cartIcon)    cartIcon.addEventListener('click', openSideCart);
@@ -216,7 +239,7 @@ function openProductView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product || !productViewEl) return;
 
-    currentViewProduct = product;
+    currentViewProduct     = product;
     pvImg.src              = product.img;
     pvImg.alt              = product.name;
     pvName.textContent     = product.name;
@@ -352,38 +375,35 @@ renderSideCart();
 // ============================================================
 // ============================================================
 
-// ─── Product meta (availability, type, brand, color, size) ───────────────────
 const productMeta = [
-    { id: 1,  inStock: true,  type: "Console",   brand: "XFX",           colors: ["black"],         sizes: [] },
-    { id: 2,  inStock: true,  type: "Keycaps",   brand: "XFX",           colors: ["black","white"],  sizes: ["Small","Large"] },
-    { id: 3,  inStock: true,  type: "Monitors",  brand: "Acer",          colors: ["black"],         sizes: ["21.5 Inches"] },
-    { id: 4,  inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],   sizes: ["50D x 65W"] },
-    { id: 5,  inStock: true,  type: "Headset",   brand: "HyperX",        colors: ["black","red"],   sizes: [] },
-    { id: 6,  inStock: true,  type: "Game PCs",  brand: "XFX",           colors: ["black"],         sizes: ["20 x 12.5 x 13"] },
-    { id: 7,  inStock: true,  type: "Chairs",    brand: "Kepler Brooks", colors: ["black","blue"],   sizes: ["52D x 66W"] },
-    { id: 8,  inStock: false, type: "Game PCs",  brand: "Electrobot",    colors: ["black"],         sizes: ["18 x 11.5 x 11"] },
-    { id: 9,  inStock: true,  type: "Console",   brand: "KandE",         colors: ["black","white"],  sizes: [] },
-    { id: 10, inStock: false, type: "Console",   brand: "XFX",           colors: ["black","white"],  sizes: ["256 GB"] },
-    { id: 11, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],         sizes: ["8 GB","RX 750"] },
-    { id: 12, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],         sizes: ["8 GB"] },
-    { id: 13, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],         sizes: ["3 GB"] },
-    { id: 14, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],         sizes: ["364 GB"] },
-    { id: 15, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],         sizes: ["364 GB"] },
-    { id: 16, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","gray"],   sizes: ["52D x 66W"] },
-    { id: 17, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],   sizes: ["50D x 66W"] },
-    { id: 18, inStock: true,  type: "Game PCs",  brand: "Electrobot",    colors: ["black"],         sizes: ["256 GB","128 GB"] },
-    { id: 19, inStock: false, type: "Console",   brand: "Sony PS5",      colors: ["white"],         sizes: [] },
-    { id: 20, inStock: true,  type: "Remote",    brand: "Vulture",       colors: ["black","gray"],   sizes: [] },
-    { id: 21, inStock: true,  type: "Monitors",  brand: "Lenovo",        colors: ["black"],         sizes: ["25.5 Inches"] },
-    { id: 22, inStock: false, type: "Remote",    brand: "Sony PS5",      colors: ["white"],         sizes: [] },
-    { id: 23, inStock: true,  type: "Monitors",  brand: "Samsung",       colors: ["black"],         sizes: ["28 Inches"] },
-    { id: 24, inStock: true,  type: "Monitors",  brand: "LG",            colors: ["black"],         sizes: ["32 Inches"] },
+    { id: 1,  inStock: true,  type: "Console",   brand: "XFX",           colors: ["black"],        sizes: [] },
+    { id: 2,  inStock: true,  type: "Keycaps",   brand: "XFX",           colors: ["black","white"], sizes: ["Small","Large"] },
+    { id: 3,  inStock: true,  type: "Monitors",  brand: "Acer",          colors: ["black"],        sizes: ["21.5 Inches"] },
+    { id: 4,  inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["50D x 65W"] },
+    { id: 5,  inStock: true,  type: "Headset",   brand: "HyperX",        colors: ["black","red"],  sizes: [] },
+    { id: 6,  inStock: true,  type: "Game PCs",  brand: "XFX",           colors: ["black"],        sizes: ["20 x 12.5 x 13"] },
+    { id: 7,  inStock: true,  type: "Chairs",    brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["52D x 66W"] },
+    { id: 8,  inStock: false, type: "Game PCs",  brand: "Electrobot",    colors: ["black"],        sizes: ["18 x 11.5 x 11"] },
+    { id: 9,  inStock: true,  type: "Console",   brand: "KandE",         colors: ["black","white"], sizes: [] },
+    { id: 10, inStock: false, type: "Console",   brand: "XFX",           colors: ["black","white"], sizes: ["256 GB"] },
+    { id: 11, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["8 GB","RX 750"] },
+    { id: 12, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["8 GB"] },
+    { id: 13, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["3 GB"] },
+    { id: 14, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["364 GB"] },
+    { id: 15, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["364 GB"] },
+    { id: 16, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","gray"],  sizes: ["52D x 66W"] },
+    { id: 17, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["50D x 66W"] },
+    { id: 18, inStock: true,  type: "Game PCs",  brand: "Electrobot",    colors: ["black"],        sizes: ["256 GB","128 GB"] },
+    { id: 19, inStock: false, type: "Console",   brand: "Sony PS5",      colors: ["white"],        sizes: [] },
+    { id: 20, inStock: true,  type: "Remote",    brand: "Vulture",       colors: ["black","gray"],  sizes: [] },
+    { id: 21, inStock: true,  type: "Monitors",  brand: "Lenovo",        colors: ["black"],        sizes: ["25.5 Inches"] },
+    { id: 22, inStock: false, type: "Remote",    brand: "Sony PS5",      colors: ["white"],        sizes: [] },
+    { id: 23, inStock: true,  type: "Monitors",  brand: "Samsung",       colors: ["black"],        sizes: ["28 Inches"] },
+    { id: 24, inStock: true,  type: "Monitors",  brand: "LG",            colors: ["black"],        sizes: ["32 Inches"] },
 ];
 
-// colour order matches CSS nth-child in .colorlist
 const colorOrder = ["black", "blue", "green", "gray", "red", "white"];
 
-// active filter state
 const activeFilters = {
     availability: [],
     minPrice: 0,
@@ -394,7 +414,6 @@ const activeFilters = {
     sizes:  [],
 };
 
-// ─── Apply filters & update card visibility ───────────────────────────────────
 function applyFilters() {
     const cards = document.querySelectorAll('.productCards .card');
     let visible = 0;
@@ -405,37 +424,31 @@ function applyFilters() {
         const product = products.find(p => p.id === id);
         if (!meta || !product) { card.style.display = ''; return; }
 
-        // availability
         if (activeFilters.availability.length) {
             const wantIn  = activeFilters.availability.includes('In stock');
             const wantOut = activeFilters.availability.includes('Out of stock');
-            if (wantIn  && !wantOut && !meta.inStock) { card.style.display = 'none'; return; }
+            if ( wantIn && !wantOut && !meta.inStock) { card.style.display = 'none'; return; }
             if (!wantIn &&  wantOut &&  meta.inStock) { card.style.display = 'none'; return; }
         }
 
-        // price
         if (product.price < activeFilters.minPrice || product.price > activeFilters.maxPrice) {
             card.style.display = 'none'; return;
         }
 
-        // type
         if (activeFilters.types.length && !activeFilters.types.includes(meta.type)) {
             card.style.display = 'none'; return;
         }
 
-        // brand
         if (activeFilters.brands.length && !activeFilters.brands.includes(meta.brand)) {
             card.style.display = 'none'; return;
         }
 
-        // color
         if (activeFilters.colors.length) {
             if (!activeFilters.colors.some(c => meta.colors.includes(c))) {
                 card.style.display = 'none'; return;
             }
         }
 
-        // size
         if (activeFilters.sizes.length) {
             if (!activeFilters.sizes.some(s => meta.sizes.includes(s))) {
                 card.style.display = 'none'; return;
@@ -446,12 +459,10 @@ function applyFilters() {
         visible++;
     });
 
-    // update counter
     const counter = document.querySelector('.products .header p span');
     if (counter) counter.textContent = visible;
 }
 
-// ─── Helper: read checked labels from a checklist section ────────────────────
 function getCheckedLabels(section) {
     const results = [];
     section.querySelectorAll('li').forEach(li => {
@@ -464,7 +475,6 @@ function getCheckedLabels(section) {
     return results;
 }
 
-// ─── Wire checklist sections ──────────────────────────────────────────────────
 function wireChecklistSection(sectionSelector, filterKey) {
     const section = document.querySelector(sectionSelector);
     if (!section) return;
@@ -472,9 +482,7 @@ function wireChecklistSection(sectionSelector, filterKey) {
     section.querySelectorAll('li').forEach(li => {
         const checkbox = li.querySelector('.checkbox');
         if (!checkbox) return;
-
         checkbox.addEventListener('click', () => {
-            // read state after the generic toggle handler fires
             setTimeout(() => {
                 activeFilters[filterKey] = getCheckedLabels(section);
                 const selectedSpan = section.querySelector('.detail-head span');
@@ -505,13 +513,12 @@ wireChecklistSection('.typeFilter',         'types');
 wireChecklistSection('.brandFilter',        'brands');
 wireChecklistSection('.sizeFilter',         'sizes');
 
-// ─── Price filter ─────────────────────────────────────────────────────────────
 (function wirePriceFilter() {
-    const section   = document.querySelector('.priceFilter');
+    const section  = document.querySelector('.priceFilter');
     if (!section) return;
-    const inputs    = section.querySelectorAll('input[type="number"]');
-    const minInput  = inputs[0];
-    const maxInput  = inputs[1];
+    const inputs   = section.querySelectorAll('input[type="number"]');
+    const minInput = inputs[0];
+    const maxInput = inputs[1];
 
     function onPriceChange() {
         const min = parseFloat(minInput?.value) || 0;
@@ -537,7 +544,6 @@ wireChecklistSection('.sizeFilter',         'sizes');
     }
 })();
 
-// ─── Colour filter ────────────────────────────────────────────────────────────
 (function wireColorFilter() {
     const section = document.querySelector('.colorFilter');
     if (!section) return;
@@ -590,10 +596,9 @@ wireChecklistSection('.sizeFilter',         'sizes');
     }
 })();
 
-// ─── Collapsible panels (+ icon) ─────────────────────────────────────────────
 document.querySelectorAll('.filters .border').forEach(panel => {
-    const toggle  = panel.querySelector('.filter-type');
-    const details = panel.querySelector('.details');
+    const toggle   = panel.querySelector('.filter-type');
+    const details  = panel.querySelector('.details');
     const plusIcon = panel.querySelector('.plus i');
     if (!toggle || !details) return;
 
@@ -610,5 +615,4 @@ document.querySelectorAll('.filters .border').forEach(panel => {
     });
 });
 
-// ─── Initial filter run ───────────────────────────────────────────────────────
 applyFilters();
