@@ -29,8 +29,8 @@ function renderCartPage() {
     fullCartEl.style.display = 'block';
 
     // build rows
-    itemsContainer.innerHTML = cartItems.map(item => `
-        <div class="item" data-id="${item.id}">
+    itemsContainer.innerHTML = cartItems.map(item => 
+        `<div class="item" data-id="${item.id}">
             <div class="image">
                 <img src="${item.img}" alt="${item.name}">
             </div>
@@ -120,7 +120,7 @@ if (orderBtn) {
     orderBtn.addEventListener('click', () => {
         //  window.alert(" Nintendo Switch Lite is ordered successfully");
         if (cartItems.length === 0) return;
-        showToast('🎮 Order placed successfully! Thank you!');
+        showToast(' Order placed successfully! Thank you!');
         cartItems = [];
         saveCart();
         setTimeout(renderCartPage, 1600);

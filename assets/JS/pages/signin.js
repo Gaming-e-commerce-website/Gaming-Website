@@ -25,10 +25,10 @@ function validateEmail() {
     const value = emailInput.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (value === "") {
-        showError(emailError, "⚠ Email is required.");
+        showError(emailError, "  Email is required.");
         return false;
     } else if (!emailRegex.test(value)) {
-        showError(emailError, "⚠ Please enter a valid email address (e.g. user@example.com).");
+        showError(emailError, "  Please enter a valid email address (e.g. user@example.com).");
         return false;
     }
     clearError(emailError);
@@ -38,7 +38,7 @@ function validateEmail() {
 function validatePassword() {
     const value = passwordInput.value;
     if (value === "") {
-        showError(passError, "⚠ Password is required.");
+        showError(passError, "  Password is required.");
         return false;
     }
     clearError(passError);
@@ -68,7 +68,7 @@ signinForm.addEventListener("submit", function (e) {
 
     if (!foundUser) {
         submitError.textContent = "";
-        showError(submitError, "⚠ No account found with this email. Please ");
+        showError(submitError, "  No account found with this email. Please ");
 
         const link = document.createElement("a");
         link.href = "signup.html";
@@ -83,13 +83,13 @@ signinForm.addEventListener("submit", function (e) {
     }
 
     if (foundUser.password !== enteredPassword) {
-        showError(passError, "⚠ Incorrect password. Please try again.");
+        showError(passError, "  Incorrect password. Please try again.");
         return;
     }
 
 
     clearError(submitError);
-    submitError.textContent = `✅ Welcome back, ${foundUser.firstName}! Redirecting...`;
+    submitError.textContent = `  Welcome back, ${foundUser.firstName}! Redirecting...`;
     submitError.style.color = "#38a169";
     submitError.style.fontSize = "14px";
     submitError.style.marginTop = "10px";

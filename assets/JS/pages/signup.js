@@ -133,11 +133,7 @@ signupForm.addEventListener("submit", function (e) {
     localStorage.setItem("gamingUsers", JSON.stringify(existingUsers));
 
     clearError(submitError);
-<<<<<<< HEAD
     submitError.textContent = "Account created successfully! Redirecting to login...";
-=======
-    submitError.textContent = " Account created successfully! Redirecting to login...";
->>>>>>> 65af0261863e906982bff39fe90c0fc0d4e938c4
     submitError.style.color = "#38a169";
     submitError.style.fontSize = "14px";
     submitError.style.marginTop = "10px";

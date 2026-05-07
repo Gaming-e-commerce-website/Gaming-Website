@@ -142,6 +142,18 @@ const products = window.__PRODUCTS_DATA__ ? window.__PRODUCTS_DATA__ : [
     { id: 24, name: "Alienware Gaming Monitor", price: 560, img: "../assets/images/Products/24-1.webp", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
 ];
 
+function isLoggedIn() {
+    return !!localStorage.getItem('loggedInUser');
+}
+
+function requireLogin() {
+    
+    localStorage.setItem('redirectAfterLogin', window.location.href);
+    showToast('  Please sign in first to add items to your cart!');
+    setTimeout(() => {
+        window.location.href = '../Pages/Signin.html';
+    }, 1500);
+}
 
 
 // SIDE CART — RENDER
@@ -221,10 +233,13 @@ function renderSideCart() {
     });
 }
 
- 
-// ADD TO CART
-
 function addToCart(productId, qty = 1) {
+    // ── تحقق من تسجيل الدخول ──
+    if (!isLoggedIn()) {
+        requireLogin();
+        return;
+    }
+
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
@@ -240,6 +255,27 @@ function addToCart(productId, qty = 1) {
     openSideCart();
     showToast(`"${product.name}" added to cart!`);
 }
+
+
+ 
+// ADD TO CART
+
+// function addToCart(productId, qty = 1) {
+//     const product = products.find(p => p.id === productId);
+//     if (!product) return;
+
+//     const existing = cartItems.find(i => i.id === productId);
+//     if (existing) {
+//         existing.qty = Math.min(existing.qty + qty, 10);
+//     } else {
+//         cartItems.push({ ...product, qty });
+//     }
+
+//     saveCart();
+//     renderSideCart();
+//     openSideCart();
+//     showToast(`"${product.name}" added to cart!`);
+// }
 
 
 // SIDE CART — OPEN / CLOSE
@@ -405,6 +441,7 @@ function showToast(message) {
             opacity: 0;
             white-space: nowrap;
             box-shadow: 0 8px 32px rgba(0,152,255,0.4);
+            font-family: Arial, Helvetica, sans-serif;
         `;
         document.body.appendChild(toast);
     }
@@ -459,9 +496,7 @@ function goTo(index) {
 
 
 btns.forEach((btn, i) => btn.addEventListener('click', () => goTo(i)));
-
-
-window.addEventListener('load', () => goTo(0));
+ 
 
 window.addEventListener('load', () => {
     requestAnimationFrame(() => {
