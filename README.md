@@ -1,24 +1,38 @@
-````md
 # 🎮 Gaming E-Commerce Website
 
-A modern and responsive gaming e-commerce website that allows users to explore a wide range of video games and gaming accessories.
+A modern and responsive gaming e-commerce website designed to provide users with a smooth and interactive experience to explore, view, and shop for video games and gaming accessories.
+
+---
+
+## 🎯 Project Goal
+
+This project was built as part of a learning journey to:
+
+- Enhance front-end development skills using HTML, CSS, and JavaScript  
+- Build a real-world e-commerce interface focused on gaming products  
+- Improve teamwork and collaboration skills  
+- Practice structuring and organizing a full web project  
 
 ---
 
 ## 🚀 Features
-- Browse popular and latest games
-- View detailed product pages
-- Add products to cart
-- Responsive design for all devices
-- User-friendly interface
-- Login / Sign Up pages
+
+- Browse a wide collection of popular and latest games  
+- View detailed product pages with descriptions and images  
+- Add and remove items from the shopping cart  
+- Fully responsive design for all devices (mobile, tablet, desktop)  
+- Clean and user-friendly UI/UX design  
+- Authentication system (Sign In / Sign Up pages)  
+- Organized navigation between different sections  
+- Cart synchronization and management  
 
 ---
 
 ## 🛠️ Technologies Used
-- HTML
-- CSS
-- JavaScript
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla JS)  
 
 ---
 
@@ -64,30 +78,20 @@ GAMING_ECOMMERCE/
 │
 ├── index.html
 └── README.md
-````
-
----
-
-## 🎯 Project Goal
-
-This project was built to practice front-end development skills and create a real-world e-commerce experience in the gaming field.
-
----
-
-## 👥 Team Members
-
-* Your Name
-* Team Member 2
-* Team Member 3
-* Team Member 4
-
----
-
-## 📌 Future Improvements
-
-* Add user authentication
-* Integrate payment system
-* Connect with backend (API)
 
 ```
-```
+---
+
+## 👥 Team
+
+This project was developed collaboratively by:
+
+| Name | GitHub |
+|------|--------|
+| Esraa Shalaby | https://github.com/Esraa-Shalaby |
+| Haneen Walid | https://github.com/HaneenWaleed |
+| Tabarak Hegazy | https://github.com/tabarkhegazy57-cmyk |
+| Hager Ahmed | https://github.com/heji-ps |
+| Mariam Gamal | — |
+
+---
