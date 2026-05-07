@@ -293,7 +293,7 @@ body {
       }
     }
 
-     .icons {
+      .icons {
       width:auto;
       display: flex;
       align-items: center;
@@ -309,9 +309,9 @@ body {
           gap:5px;
          i{
           transition: all 0.6s ease;
-          &:hover{
+           &:hover{
             transform: translateY(-5px);
-          }
+           }
          }
          .name{
           font-size: 16px;

@@ -487,7 +487,7 @@ main {
 .cart-summary{
   width: 75%;
   padding:20px 10px;
-  background-color: white;  
+  box-shadow: var(--box-shadow); 
   margin: auto; 
   display: flex;
   align-items: center;
