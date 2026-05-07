@@ -1,3 +1,5 @@
+
+
 // ===== Logout =====
 const logoutBtn = document.querySelector(".fa-arrow-right-from-bracket").parentElement;
 

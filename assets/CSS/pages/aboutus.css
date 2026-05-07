@@ -606,3 +606,27 @@ section{
 
  
  
+@media (max-width: 1400px) {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    z-index: 99999;
+  }
+
+  body::after {
+    content: ' under Working please open it in Your laptop screen';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    font-family: Raleway, sans-serif;
+   font-size: clamp(24px, 6vw, 30px);
+    font-weight: 700;
+    color: #010101;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }
+}
