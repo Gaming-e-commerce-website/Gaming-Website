@@ -56,9 +56,9 @@ function isLoggedIn() {
 }
 
 function requireLogin() {
-    // حفظ الصفحة الحالية عشان نرجعلها بعد الـ sign in
+ 
     localStorage.setItem('redirectAfterLogin', window.location.href);
-    showToast('⚠ Please sign in first to add items to your cart!');
+    showToast('  Please sign in first to add items to your cart!');
     setTimeout(() => {
         window.location.href = '../Pages/Signin.html';
     }, 1500);
@@ -145,9 +145,11 @@ function renderSideCart() {
 }
 
 
-// check login before add to cart
+// ============================================================
+// ADD TO CART  
+// ============================================================
 function addToCart(productId, qty = 1) {
-
+   
     if (!isLoggedIn()) {
         requireLogin();
         return;
