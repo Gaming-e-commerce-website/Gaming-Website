@@ -91,8 +91,7 @@ function renderSideCart() {
     const emptyDiv      = document.querySelector('.sideCart .content-empty');
     const countSpan     = document.getElementById('count');
     const priceSpan     = document.getElementById('price');
-    const navCartCircle = document.querySelector('.navbar .icons .cart .circle');
-
+    const navCartCircle = document.querySelector(' #count-items')
     if (!fullDiv) return;
 
     const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
@@ -190,7 +189,7 @@ function addToCart(productId, qty = 1) {
 // ============================================================
 const sideCartEl  = document.querySelector('.sideCart');
 const cartEl      = document.querySelector('.sideCart .cart');
-const cartIcon    = document.querySelector('.navbar .container .icons .cart');
+const cartIcon = document.querySelector('.navbar .container .icons .fa-cart-arrow-down');
 const closeCartEl = document.querySelector('.sideCart .content .cart .nav .close');
 
 function openSideCart() {
