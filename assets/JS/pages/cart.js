@@ -1,15 +1,15 @@
-// ============================================================
-// CART — assets/JS/pages/cart.js  (unified, no duplicates)
-// ============================================================
 
-// ─── Shared State ────────────────────────────────────────────
+// CART — assets/JS/pages/cart.js  (unified, no duplicates)
+
+
+//  Shared State  
 let cartItems = JSON.parse(localStorage.getItem('gamingCart')) || [];
 
 function saveCart() {
     localStorage.setItem('gamingCart', JSON.stringify(cartItems));
 }
 
-// ─── DOM Refs ─────────────────────────────────────────────────
+//   DOM Refs  
 const emptyCartEl = document.querySelector('.empty-cart');
 const fullCartEl = document.querySelector('.full-cart');
 const itemsContainer = document.querySelector('.full-cart .content .container');
@@ -20,20 +20,20 @@ const cartEl = document.querySelector('.sideCart .cart');
 const cartIcon = document.querySelector('.navbar .container .icons .fa-cart-arrow-down');
 const closeCartEl = document.querySelector('.sideCart .cart .nav .close');
 
-// ─── Badge ────────────────────────────────────────────────────
+//   Badge ─ 
 function updateNavBadge() {
     const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
 
-    // badge داخل الـ navbar (circle)
+
     const circleBadge = document.querySelectorAll('.navbar .icons .circle')[1];
     if (circleBadge) circleBadge.textContent = totalQty;
 
-    // badge الـ count-items
+
     const countBadge = document.getElementById('count-items');
     if (countBadge) countBadge.textContent = totalQty;
 }
 
-// ─── Toast ────────────────────────────────────────────────────
+//   Toast  
 function showToast(msg) {
     let toast = document.getElementById('cartToast');
     if (!toast) {
@@ -65,12 +65,11 @@ function showToast(msg) {
     }, 2500);
 }
 
-// ─── Cart Page (Full Page) ────────────────────────────────────
+//  Cart Page (Full Page)  
 function renderCartPage() {
     updateNavBadge();
 
-    if (!emptyCartEl || !fullCartEl) return; // مش في صفحة الـ cart
-
+    if (!emptyCartEl || !fullCartEl) return;
     if (cartItems.length === 0) {
         emptyCartEl.style.display = 'block';
         fullCartEl.style.display = 'none';
@@ -147,7 +146,7 @@ function renderCartPage() {
     if (orderDiv) fullCartEl.insertBefore(summaryEl, orderDiv);
 }
 
-// ─── Side Cart ────────────────────────────────────────────────
+// Side Cart  
 function renderSideCart() {
     const fullDiv = document.querySelector('.sideCart .full');
     const emptyDiv = document.querySelector('.sideCart .content-empty');
@@ -205,7 +204,7 @@ function renderSideCart() {
     );
 }
 
-// ─── Shared Mutation Helpers ──────────────────────────────────
+//   Shared Mutation Helpers 
 function changeQty(id, delta) {
     const item = cartItems.find(i => i.id === id);
     if (!item) return;
@@ -222,7 +221,7 @@ function removeItem(id) {
     renderSideCart();
 }
 
-// ─── Order Button ─────────────────────────────────────────────
+//   Order Button  
 if (orderBtn) {
     orderBtn.addEventListener('click', () => {
         if (cartItems.length === 0) return;
@@ -233,7 +232,7 @@ if (orderBtn) {
     });
 }
 
-// ─── Side Cart Open / Close ───────────────────────────────────
+//   Side Cart Open / Close  
 function openSideCart() {
     if (!sideCartEl) return;
     sideCartEl.style.opacity = '1';
@@ -254,15 +253,15 @@ if (cartIcon) cartIcon.addEventListener('click', openSideCart);
 if (closeCartEl) closeCartEl.addEventListener('click', closeSideCart);
 if (sideCartEl) sideCartEl.addEventListener('click', e => { if (e.target === sideCartEl) closeSideCart(); });
 
-// ─── Page Loader ──────────────────────────────────────────────
+//  Page Loader  
 window.addEventListener('load', () => {
     setTimeout(() => {
-        // يدعم كلا الـ class name
+
         const loader = document.getElementById('pageLoader') || document.querySelector('.page-loader');
         if (loader) loader.classList.add('hidden');
     }, 1500);
 });
 
-// ─── Init ─────────────────────────────────────────────────────
+//   Init  
 renderCartPage();
 renderSideCart();

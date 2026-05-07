@@ -1,4 +1,4 @@
-// ===== Show Username After Login =====
+//  Show Username After Login  
 let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 let nameParagraph = document.querySelector('.name');
 let accountLink = document.querySelector('.account a');

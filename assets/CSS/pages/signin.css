@@ -1,6 +1,5 @@
-
 body {
-  font-family:var(--first-font);
+  font-family: var(--first-font);
   position: relative;
 }
 
@@ -20,6 +19,7 @@ header {
   margin: 0 0 35px 0;
   transition: all 0.3s ease;
 }
+
 .back a {
   color: var(--body-text-color);
   text-decoration: none;
@@ -62,13 +62,14 @@ header p {
   max-width: 500px;
   line-height: 1.6;
 }
+
 /* end */
 
 /* main */
 main {
   width: 100%;
   background-color: var(--white);
-  padding:40px 0 40px 0 ;
+  padding: 40px 0 40px 0;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -90,7 +91,7 @@ main {
   width: 60%;
   border-radius: 8px;
   border: 2px solid var(--first-color);
-  box-shadow:0px 3px 12px   #89ccf9;
+  box-shadow: 0px 3px 12px #89ccf9;
 }
 
 .big-container h2 {
@@ -163,7 +164,7 @@ label {
 
 header .container {
   width: 75%;
-   
+
   margin: auto;
 }
 
@@ -190,11 +191,13 @@ header .container {
   overflow: hidden;
   z-index: 10;
   font-family: var(--second-font);
+
   .content {
     width: 100%;
     height: 100%;
     /* background-color: red; */
     position: relative;
+
     .cart {
       position: absolute;
       top: 0;
@@ -204,6 +207,7 @@ header .container {
       height: 100%;
       padding: 0px 30px;
       transition: all 0.6s ease-in-out 0s;
+
       .nav {
         width: 100%;
         padding: 20px 0 15px 0;
@@ -211,11 +215,13 @@ header .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         h2 {
           color: black;
           font-weight: bold;
           font-size: 26px;
         }
+
         .close {
           width: 30px;
           height: 30px;
@@ -226,11 +232,13 @@ header .container {
           justify-content: center;
           cursor: pointer;
           transition: all 0.6s ease;
+
           i:hover {
             transform: rotate(-360deg);
           }
         }
       }
+
       .content-empty {
         width: 100%;
         height: 80vh;
@@ -241,9 +249,11 @@ header .container {
         color: black;
         gap: 23px;
         display: none;
+
         p {
           font-weight: bold;
         }
+
         a {
           width: 220px;
           font-size: 14px;
@@ -259,9 +269,11 @@ header .container {
           background: var(--fourth-color);
           transition: all 0.6s ease;
           color: white;
+
           i {
             transition: all 0.6s ease;
           }
+
           &::before {
             content: '';
             display: block;
@@ -278,18 +290,22 @@ header .container {
             transform: skewX(-20deg);
             transition: all 0.6s ease;
           }
+
           &:hover::before {
             animation: shine 0.5s linear 0s;
           }
+
           &:hover i {
             transform: translateX(-10px);
           }
         }
       }
+
       .full {
         width: 100%;
         height: 70vh;
         overflow: scroll;
+
         &::-webkit-scrollbar {
           display: none;
         }
@@ -302,21 +318,25 @@ header .container {
           align-items: center;
           justify-content: space-between;
           border-bottom: 1px solid var(--first-color);
+
           .image {
             width: 100px;
             height: 100px;
             border-radius: 0px 30px;
             border: 1px solid var(--first-color);
             overflow: hidden;
+
             img {
               width: 100%;
               height: 100%;
             }
           }
+
           .info {
             width: 60%;
             color: black;
           }
+
           .quantity {
             width: 100px;
             border: 1px solid #838383;
@@ -325,6 +345,7 @@ header .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             input {
               color: #838383;
               font-weight: 500;
@@ -334,13 +355,16 @@ header .container {
               outline: none;
               border: none;
               text-align: center;
+
               &[type='number']::-webkit-outer-spin-button,
               &[type='number']::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
               }
+
               cursor: pointer;
             }
+
             button {
               color: #838383;
               width: 30%;
@@ -352,11 +376,13 @@ header .container {
               cursor: pointer;
             }
           }
+
           .info {
             h2 {
               margin-bottom: 20px;
             }
           }
+
           .remove {
             position: absolute;
             top: 10%;
@@ -366,6 +392,7 @@ header .container {
           }
         }
       }
+
       .price {
         padding: 30px 20px;
         border-bottom: 1px solid #838383;
@@ -376,6 +403,7 @@ header .container {
         justify-content: space-between;
         font-size: 18px;
       }
+
       .btn {
         width: 100%;
         display: block;
@@ -392,9 +420,11 @@ header .container {
         color: white;
         font-size: 18px;
         font-weight: 500;
+
         &:hover::before {
           animation: shine 0.5s linear 0s;
         }
+
         &::before {
           content: '';
           display: block;

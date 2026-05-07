@@ -1,6 +1,6 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     // Basic data collection
     const formData = {
         name: document.getElementById('name').value,
@@ -10,10 +10,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     };
 
     console.log('Form Submitted:', formData);
-  
-   
+
+
     this.reset();
 });
 
 
- 

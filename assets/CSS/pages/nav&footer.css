@@ -1,5 +1,6 @@
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --first-font: 'Raleway', sans-serif;
   --second-font: 'Outfit', sans-serif;
@@ -12,20 +13,16 @@
   --secondary-text-color: #007aff;
   --first-color: #0098ff;
   --second-color: #131518;
-  --third-color: linear-gradient(
-    148deg,
-    rgba(1, 152, 255, 0.18) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  --third-color: linear-gradient(148deg,
+      rgba(1, 152, 255, 0.18) 0%,
+      rgba(0, 0, 0, 0) 100%);
   --fourth-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
   --fifth-color: #7c34c8;
   --pro-btn-color: linear-gradient(93.25deg, #0098ff 4.45%, #7c34c8 93.88%);
   --pro-btn-hover-color: #ffffff;
-  --pro-hover-text-color: linear-gradient(
-    93.25deg,
-    #0098ff 4.45%,
-    #7c34c8 93.88%
-  );
+  --pro-hover-text-color: linear-gradient(93.25deg,
+      #0098ff 4.45%,
+      #7c34c8 93.88%);
   --price-color: #007aff;
   --footer-bg-color: #070606;
   --footer-text-color: #ffffff;
@@ -46,6 +43,7 @@
   --h6: normal 500 18px / 1.1 var(--first-font);
   --common-text: normal 400 16px / 1.4 var(--first-font);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -143,12 +141,15 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes corePulse {
+
   0%,
   100% {
     transform: scale(0.85);
     opacity: 0.7;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 1;
@@ -165,6 +166,7 @@ body {
   font-family: var(--first-font);
 
   transition: all 0.6s ease;
+
   .container {
     width: 95%;
     margin: 0 auto;
@@ -293,35 +295,41 @@ body {
       }
     }
 
-      .icons {
-      width:auto;
+    .icons {
+      width: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 23px;
-      gap:20px;
+      gap: 20px;
+
       div {
         position: relative;
         transition: all 0.6s ease;
-     &.account{
-         display: flex;
-         align-items: center;
-          gap:5px;
-         i{
-          transition: all 0.6s ease;
-           &:hover{
-            transform: translateY(-5px);
-           }
-         }
-         .name{
-          font-size: 16px;
-          align-self: flex-end;
-         }
-         &:hover{
-          transform: translateY(0px);
-         }
-     }
-       
+
+        &.account {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          i {
+            transition: all 0.6s ease;
+
+            &:hover {
+              transform: translateY(-5px);
+            }
+          }
+
+          .name {
+            font-size: 16px;
+            align-self: flex-end;
+          }
+
+          &:hover {
+            transform: translateY(0px);
+          }
+        }
+
         i {
           cursor: pointer;
         }
@@ -343,7 +351,7 @@ body {
           transform: translateY(-5px);
         }
       }
-      
+
     }
   }
 }
@@ -361,6 +369,7 @@ body {
   transform: translateY(10px);
   padding: 10px 0;
 }
+
 /* end nav */
 
 /* =========================== */
@@ -373,31 +382,39 @@ footer {
   flex-direction: column;
   align-items: center;
   font-family: var(--second-font);
+
   a {
     transition: 1s;
+
     &:hover {
       color: var(--text-color);
     }
   }
+
   .footer-up {
     width: 95%;
     display: flex;
     justify-content: space-between;
     padding: 90px 0px 100px 0px;
+
     .footer-col {
       display: flex;
       flex-direction: column;
+
       h2 {
         font-size: 20px;
         font-weight: 500;
       }
+
       .uppercase {
         text-transform: uppercase;
         margin-bottom: 30px;
       }
+
       ul {
         li {
           position: relative;
+
           a {
             &::after {
               content: '';
@@ -411,15 +428,18 @@ footer {
               transition: all 0.6s ease;
             }
           }
+
           &:hover a::after {
             width: 60px;
           }
         }
+
         display: flex;
         flex-direction: column;
         gap: 15px;
       }
     }
+
     .subscribe {
       h1 {
         font-size: 50px;
@@ -429,6 +449,7 @@ footer {
         background-clip: text;
         transform: translateY(-28px);
       }
+
       p {
         margin-top: 20px;
       }
@@ -458,18 +479,19 @@ footer {
     width: 100%;
     border-top: 1px solid white;
     padding: 35px 0px;
+
     .container {
       width: 95%;
       display: flex;
       margin: auto;
       justify-content: space-between;
     }
+
     .payment-image-wrapper {
       display: flex;
       gap: 10px;
     }
   }
 }
+
 /* end footer */
-/* ─── Mobile / Small Screen Block ─────────────────────────── */
- 

@@ -96,11 +96,6 @@ btn3.onclick = function () {
 
 
 
-
-
-
-
-
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const input = document.querySelector(".quantity input");
@@ -247,7 +242,7 @@ function renderSideCart() {
 }
 
 function addToCart(productId, qty = 1) {
-    // ── تحقق من تسجيل الدخول ──
+    // check login
     if (!isLoggedIn()) {
         requireLogin();
         return;
@@ -271,24 +266,6 @@ function addToCart(productId, qty = 1) {
 
 
 
-// ADD TO CART
-
-// function addToCart(productId, qty = 1) {
-//     const product = products.find(p => p.id === productId);
-//     if (!product) return;
-
-//     const existing = cartItems.find(i => i.id === productId);
-//     if (existing) {
-//         existing.qty = Math.min(existing.qty + qty, 10);
-//     } else {
-//         cartItems.push({ ...product, qty });
-//     }
-
-//     saveCart();
-//     renderSideCart();
-//     openSideCart();
-//     showToast(`"${product.name}" added to cart!`);
-// }
 
 
 // SIDE CART — OPEN / CLOSE
@@ -418,7 +395,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
         eyeIcon.addEventListener('click', () => openProductView(productId));
     }
 
-    // Heart icon → wishlist (just toggles color for now)
+    // Heart icon  wishlist (just toggles color for now)
     const heartIcon = card.querySelector('.fa-heart');
     if (heartIcon) {
         heartIcon.style.cursor = 'pointer';
@@ -520,7 +497,7 @@ window.addEventListener('load', () => {
 });
 
 
-// ===== Show Username After Login =====
+//  Show Username After Login 
 let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 let nameParagraph = document.querySelector('.name');
 let accountLink = document.querySelector('.account a');
