@@ -103,18 +103,18 @@ minus.addEventListener("click", function (e) {
     }
 });
 
-// ============================================================
+
 // CART STATE
-// ============================================================
+
 let cartItems = JSON.parse(localStorage.getItem('gamingCart')) || [];
 
 function saveCart() {
     localStorage.setItem('gamingCart', JSON.stringify(cartItems));
 }
 
-// ============================================================
+
 // PRODUCT DATA   
-// ============================================================
+
 const products = window.__PRODUCTS_DATA__ ? window.__PRODUCTS_DATA__ : [
     { id: 1, name: "Nintendo Switch Lite", price: 543, img: "../assets/images/Products/1-1.png", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
     { id: 2, name: "Rubber Keycaps", price: 580, img: "../assets/images/Products/2-1.png", desc: "Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches or any new switches that have a + under your keycaps." },
@@ -143,9 +143,9 @@ const products = window.__PRODUCTS_DATA__ ? window.__PRODUCTS_DATA__ : [
 ];
 
 
-// ============================================================
+
 // SIDE CART — RENDER
-// ============================================================
+
 function renderSideCart() {
     const fullDiv = document.querySelector('.sideCart .full');
     const emptyDiv = document.querySelector('.sideCart .content-empty');
@@ -221,9 +221,9 @@ function renderSideCart() {
     });
 }
 
-// ============================================================
+ 
 // ADD TO CART
-// ============================================================
+
 function addToCart(productId, qty = 1) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -241,9 +241,9 @@ function addToCart(productId, qty = 1) {
     showToast(`"${product.name}" added to cart!`);
 }
 
-// ============================================================
+
 // SIDE CART — OPEN / CLOSE
-// ============================================================
+
 const sideCartEl = document.querySelector('.sideCart');
 const cartEl = document.querySelector('.sideCart .cart');
 const cartIcon = document.querySelector('.navbar .container .icons .fa-cart-arrow-down');
@@ -275,9 +275,9 @@ if (sideCartEl) {
     });
 }
 
-// ============================================================
+
 // PRODUCT VIEW MODAL
-// ============================================================
+
 const productViewEl = document.querySelector('.product-veiw');
 const pvImg = document.querySelector('.product-veiw .img img');
 const pvName = document.querySelector('.product-veiw .info h2');
@@ -350,9 +350,9 @@ if (pvAddBtn) {
     });
 }
 
-// ============================================================
+
 // WIRE UP PRODUCT CARDS
-// ============================================================
+
 document.querySelectorAll('.card').forEach((card, index) => {
     const productId = index + 1; // cards are 1-indexed
 
@@ -381,9 +381,9 @@ document.querySelectorAll('.card').forEach((card, index) => {
     }
 });
 
-// ============================================================
+
 // TOAST NOTIFICATION
-// ============================================================
+
 function showToast(message) {
     let toast = document.getElementById('cartToast');
     if (!toast) {
@@ -423,3 +423,50 @@ function showToast(message) {
 }
 
 renderSideCart();
+
+
+// slider section  for products 
+
+const cards = document.querySelectorAll('.card');
+const btns = document.querySelectorAll('.selected-btns p');
+const container = document.querySelector('.products');
+
+let current = 0;
+
+
+function goTo(index) {
+   
+    const total = cards.length;
+    current = (index + total) % total;   
+
+
+   
+    cards.forEach(c => c.classList.remove('selected'));
+
+    
+    
+    cards[current].classList.add('selected');
+
+  
+    const card = cards[current];
+    const containerW = container.offsetWidth;
+    const scrollTo = card.offsetLeft
+        - (containerW / 2)
+        + (card.offsetWidth / 2);
+
+    container.scrollTo({ left: scrollTo, behavior: 'smooth' });
+}
+
+
+btns.forEach((btn, i) => btn.addEventListener('click', () => goTo(i)));
+
+
+window.addEventListener('load', () => goTo(0));
+
+window.addEventListener('load', () => {
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            goTo(0);
+        });
+    });
+});
