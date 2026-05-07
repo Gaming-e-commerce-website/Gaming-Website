@@ -130,7 +130,7 @@ function saveCart() {
 // PRODUCT DATA   
 
 const products = window.__PRODUCTS_DATA__ ? window.__PRODUCTS_DATA__ : [
-    { id: 1, name: "Nintendo Switch Lite", price: 543, img: "assets/images/Products/1-1.png", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
+    { id: 1, name: "Nintendo Switch Lite", price: 543, img: "/assets/images/Products/1-1.png", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
     { id: 2, name: "Rubber Keycaps", price: 580, img: "assets/images/Products/2-1.png", desc: "Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches or any new switches that have a + under your keycaps." },
     { id: 3, name: "Alien ware Monitor T 46", price: 850, img: "assets/images/Products/3-1.png", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
     { id: 4, name: "Colossus Ergonomic", price: 356, img: "assets/images/Products/4-1.png", desc: "ERGONOMICALLY DESIGNED FOR HARDCORE GAMING: From its unique contours and angled seat edges, to its fully adjustable recline, tilt, and height, the Dr Luxur." },
@@ -270,7 +270,7 @@ function addToCart(productId, qty = 1) {
 }
 
 
- 
+
 // ADD TO CART
 
 // function addToCart(productId, qty = 1) {
@@ -485,19 +485,19 @@ let current = 0;
 
 
 function goTo(index) {
-   
+
     const total = cards.length;
-    current = (index + total) % total;   
+    current = (index + total) % total;
 
 
-   
+
     cards.forEach(c => c.classList.remove('selected'));
 
-    
-    
+
+
     cards[current].classList.add('selected');
 
-  
+
     const card = cards[current];
     const containerW = container.offsetWidth;
     const scrollTo = card.offsetLeft
@@ -509,7 +509,7 @@ function goTo(index) {
 
 
 btns.forEach((btn, i) => btn.addEventListener('click', () => goTo(i)));
- 
+
 
 window.addEventListener('load', () => {
     requestAnimationFrame(() => {
