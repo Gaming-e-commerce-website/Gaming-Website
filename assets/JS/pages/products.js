@@ -1,6 +1,4 @@
-// ============================================================
 // PAGE LOADER
-// ============================================================
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.querySelector('.page-loader').classList.add('hidden');
@@ -8,57 +6,51 @@ window.addEventListener('load', () => {
 });
 
 
-// ============================================================
 // FILTER CHECKBOX (generic toggle — kept for non-filter uses)
-// ============================================================
 var checkboxes = document.querySelectorAll(".checkbox");
 
-checkboxes.forEach(function(checkbox){
+checkboxes.forEach(function (checkbox) {
     var icon = checkbox.querySelector("i");
-    checkbox.addEventListener("click", function(){
+    checkbox.addEventListener("click", function () {
         icon.classList.toggle("active");
     });
 });
 
 
-// ============================================================
 // PRODUCTS DATA
-// ============================================================
 window.__PRODUCTS_PAGE__ = true;
 
 window.__PRODUCTS_DATA__ = [
-    { id: 1,  name: "Nintendo Switch Lite",       price: 543, img: "../assets/images/Products/1-1.png",   desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
-    { id: 2,  name: "Rubber Keycaps",             price: 580, img: "../assets/images/Products/2-1.png",   desc: "Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches or any new switches that have a + under your keycaps." },
-    { id: 3,  name: "Alien ware Monitor T 46",    price: 850, img: "../assets/images/Products/3-1.png",   desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
-    { id: 4,  name: "Colossus Ergonomic",         price: 356, img: "../assets/images/Products/4-1.png",   desc: "ERGONOMICALLY DESIGNED FOR HARDCORE GAMING: From its unique contours and angled seat edges, to its fully adjustable recline, tilt, and height, the Dr Luxur." },
-    { id: 5,  name: "Cloud Alpha Gaming",         price: 530, img: "../assets/images/Products/5-1.png",   desc: "HyperX Dual Chamber Drivers for more distinction and less distortion. Signature Award-Winning HyperX comfort. Durable aluminum frame with an expanded design." },
-    { id: 6,  name: "Raptor Gaming Z95",          price: 896, img: "../assets/images/Products/6-1.webp",  desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
-    { id: 7,  name: "Gaming Chair for Gamers",    price: 560, img: "../assets/images/Products/7-1.png",   desc: "Have back issues or don't want to develop them? This adjustable office chair includes Cushion Foam Padded support and a recline feature." },
-    { id: 8,  name: "Electrobot Xtreme Gaming",   price: 468, img: "../assets/images/Products/8-1.png",   desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
-    { id: 9,  name: "VR Headset",                 price: 860, img: "../assets/images/Products/9-1.png",   desc: "40MM HD optical resin lens with Focal and IPD adjustments with FOV up to 110 provides best VR Experience. Best-in-class headphones With 3.5mm Jack." },
-    { id: 10, name: "Refurbished Xbox Series X",  price: 430, img: "../assets/images/Products/10-1.webp", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
-    { id: 11, name: "Radeon™ RX 750 XT",          price: 940, img: "../assets/images/Products/11-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
-    { id: 12, name: "Radeon™ RX 750 XT (II)",     price: 560, img: "../assets/images/Products/12-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
-    { id: 13, name: "Radeon RX 680 GTS",          price: 356, img: "../assets/images/Products/13-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
-    { id: 14, name: "Radeon RX 590 GTS",          price: 890, img: "../assets/images/Products/14-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
-    { id: 15, name: "Radeon RX 590 GTS (II)",     price: 890, img: "../assets/images/Products/15-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
+    { id: 1, name: "Nintendo Switch Lite", price: 543, img: "../assets/images/Products/1-1.png", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
+    { id: 2, name: "Rubber Keycaps", price: 580, img: "../assets/images/Products/2-1.png", desc: "Our Rubber Keycaps are designed to fit any gaming keyboard with any Cherry MX Switches or any new switches that have a + under your keycaps." },
+    { id: 3, name: "Alien ware Monitor T 46", price: 850, img: "../assets/images/Products/3-1.png", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
+    { id: 4, name: "Colossus Ergonomic", price: 356, img: "../assets/images/Products/4-1.png", desc: "ERGONOMICALLY DESIGNED FOR HARDCORE GAMING: From its unique contours and angled seat edges, to its fully adjustable recline, tilt, and height, the Dr Luxur." },
+    { id: 5, name: "Cloud Alpha Gaming", price: 530, img: "../assets/images/Products/5-1.png", desc: "HyperX Dual Chamber Drivers for more distinction and less distortion. Signature Award-Winning HyperX comfort. Durable aluminum frame with an expanded design." },
+    { id: 6, name: "Raptor Gaming Z95", price: 896, img: "../assets/images/Products/6-1.webp", desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
+    { id: 7, name: "Gaming Chair for Gamers", price: 560, img: "../assets/images/Products/7-1.png", desc: "Have back issues or don't want to develop them? This adjustable office chair includes Cushion Foam Padded support and a recline feature." },
+    { id: 8, name: "Electrobot Xtreme Gaming", price: 468, img: "../assets/images/Products/8-1.png", desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
+    { id: 9, name: "VR Headset", price: 860, img: "../assets/images/Products/9-1.png", desc: "40MM HD optical resin lens with Focal and IPD adjustments with FOV up to 110 provides best VR Experience. Best-in-class headphones With 3.5mm Jack." },
+    { id: 10, name: "Refurbished Xbox Series X", price: 430, img: "../assets/images/Products/10-1.webp", desc: "Compatibility; Glass Screen Protector Compatible with Nintendo Switch. 9H Hardness; Tempered glass durability rated at 9H hardness to protect from everyday scratches." },
+    { id: 11, name: "Radeon™ RX 750 XT", price: 940, img: "../assets/images/Products/11-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
+    { id: 12, name: "Radeon™ RX 750 XT (II)", price: 560, img: "../assets/images/Products/12-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
+    { id: 13, name: "Radeon RX 680 GTS", price: 356, img: "../assets/images/Products/13-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
+    { id: 14, name: "Radeon RX 590 GTS", price: 890, img: "../assets/images/Products/14-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
+    { id: 15, name: "Radeon RX 590 GTS (II)", price: 890, img: "../assets/images/Products/15-1.webp", desc: "Microsoft Windows 10 and Microsoft DirectX 12 supported Video Memory: 8GB DDR5. The XFX Radeon RX 580 Series graphics card coupled with AMD LiquidVR." },
     { id: 16, name: "Multi-Functional Ergonomic", price: 560, img: "../assets/images/Products/16-1.webp", desc: "ERGONOMIC DESIGN: Feel less fatigued over long periods with the lumbar curve that gently supports your lower back and encourages sitting in a neutral position." },
     { id: 17, name: "Kepler Brooks Gaming Chair", price: 800, img: "../assets/images/Products/17-1.webp", desc: "Premium Material: PU Leather Upholstery made with High density foam and added seat cushion, more comfort and long-time use; High Tensile steel frame." },
-    { id: 18, name: "KD DMTR Gaming Desktop",     price: 865, img: "../assets/images/Products/18-1.webp", desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
-    { id: 19, name: "Hyper Clutch Gaming",        price: 630, img: "../assets/images/Products/19-1.webp", desc: "Bring gaming worlds to life. Feel your in-game actions and environment simulated through haptic feedback. Experience varying force and tension at your fingertips." },
-    { id: 20, name: "HTC Vive Tracker 3.0 PC",   price: 560, img: "../assets/images/Products/20-1.webp", desc: "Body tracking – track the physical presence of your entire body within the virtual environment. Capture full-body motions with as few as 3 trackers." },
+    { id: 18, name: "KD DMTR Gaming Desktop", price: 865, img: "../assets/images/Products/18-1.webp", desc: "Multiple connectivity options including HDMI, USB ports & RGB fans let you connect a variety of peripherals easily. Wi-Fi Ready – Connect to the internet wirelessly." },
+    { id: 19, name: "Hyper Clutch Gaming", price: 630, img: "../assets/images/Products/19-1.webp", desc: "Bring gaming worlds to life. Feel your in-game actions and environment simulated through haptic feedback. Experience varying force and tension at your fingertips." },
+    { id: 20, name: "HTC Vive Tracker 3.0 PC", price: 560, img: "../assets/images/Products/20-1.webp", desc: "Body tracking – track the physical presence of your entire body within the virtual environment. Capture full-body motions with as few as 3 trackers." },
     { id: 21, name: "G-Series Curved VA Monitor", price: 453, img: "../assets/images/Products/21-1.webp", desc: "Lenovo Smart Artery Software: Self-learning software auto-adjusts display. Crosshair feature for FPS games. View Frame Rate and Timer. Create customized gaming modes." },
-    { id: 22, name: "DualSense Wireless",         price: 600, img: "../assets/images/Products/22-1.webp", desc: "Bring gaming worlds to life. Feel your in-game actions and environment simulated through haptic feedback. Experience varying force and tension at your fingertips." },
-    { id: 23, name: "Alienware Monitor D 152",    price: 752, img: "../assets/images/Products/23-1.webp", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
-    { id: 24, name: "Alienware Gaming Monitor",   price: 560, img: "../assets/images/Products/24-1.webp", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
+    { id: 22, name: "DualSense Wireless", price: 600, img: "../assets/images/Products/22-1.webp", desc: "Bring gaming worlds to life. Feel your in-game actions and environment simulated through haptic feedback. Experience varying force and tension at your fingertips." },
+    { id: 23, name: "Alienware Monitor D 152", price: 752, img: "../assets/images/Products/23-1.webp", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
+    { id: 24, name: "Alienware Gaming Monitor", price: 560, img: "../assets/images/Products/24-1.webp", desc: "Exceptional Full HD IPS 21.5 Inch Ultra Thin Display: Enjoy immaculate image quality with 1920x1080 resolution and 178 degree wide viewing angles. Zero Frame." },
 ];
 
 const products = window.__PRODUCTS_DATA__;
 
 
-// ============================================================
 // AUTH CHECK
-// ============================================================
 function isLoggedIn() {
     return !!localStorage.getItem('loggedInUser');
 }
@@ -73,9 +65,7 @@ function requireLogin() {
 }
 
 
-// ============================================================
 // CART STATE
-// ============================================================
 let cartItems = JSON.parse(localStorage.getItem('gamingCart')) || [];
 
 function saveCart() {
@@ -83,14 +73,12 @@ function saveCart() {
 }
 
 
-// ============================================================
 // SIDE CART — RENDER
-// ============================================================
 function renderSideCart() {
-    const fullDiv       = document.querySelector('.sideCart .full');
-    const emptyDiv      = document.querySelector('.sideCart .content-empty');
-    const countSpan     = document.getElementById('count');
-    const priceSpan     = document.getElementById('price');
+    const fullDiv = document.querySelector('.sideCart .full');
+    const emptyDiv = document.querySelector('.sideCart .content-empty');
+    const countSpan = document.getElementById('count');
+    const priceSpan = document.getElementById('price');
     const navCartCircle = document.querySelector(' #count-items')
     if (!fullDiv) return;
 
@@ -134,14 +122,14 @@ function renderSideCart() {
 
     fullDiv.querySelectorAll('.plus').forEach(btn => {
         btn.addEventListener('click', () => {
-            const id   = parseInt(btn.dataset.id);
+            const id = parseInt(btn.dataset.id);
             const item = cartItems.find(i => i.id === id);
             if (item && item.qty < 10) { item.qty++; saveCart(); renderSideCart(); }
         });
     });
     fullDiv.querySelectorAll('.minus').forEach(btn => {
         btn.addEventListener('click', () => {
-            const id   = parseInt(btn.dataset.id);
+            const id = parseInt(btn.dataset.id);
             const item = cartItems.find(i => i.id === id);
             if (item && item.qty > 1) { item.qty--; saveCart(); renderSideCart(); }
         });
@@ -157,11 +145,9 @@ function renderSideCart() {
 }
 
 
-// ============================================================
-// ADD TO CART  ← بيتحقق من الـ login الأول
-// ============================================================
+// check login before add to cart
 function addToCart(productId, qty = 1) {
-    // ── تحقق من تسجيل الدخول ──
+
     if (!isLoggedIn()) {
         requireLogin();
         return;
@@ -184,31 +170,29 @@ function addToCart(productId, qty = 1) {
 }
 
 
-// ============================================================
 // SIDE CART — OPEN / CLOSE
-// ============================================================
-const sideCartEl  = document.querySelector('.sideCart');
-const cartEl      = document.querySelector('.sideCart .cart');
+const sideCartEl = document.querySelector('.sideCart');
+const cartEl = document.querySelector('.sideCart .cart');
 const cartIcon = document.querySelector('.navbar .container .icons .fa-cart-arrow-down');
 const closeCartEl = document.querySelector('.sideCart .content .cart .nav .close');
 
 function openSideCart() {
     if (!sideCartEl) return;
-    sideCartEl.style.opacity     = '1';
-    sideCartEl.style.visibility  = 'visible';
-    cartEl.style.right           = '0%';
+    sideCartEl.style.opacity = '1';
+    sideCartEl.style.visibility = 'visible';
+    cartEl.style.right = '0%';
     document.body.style.overflow = 'hidden';
 }
 
 function closeSideCart() {
     if (!sideCartEl) return;
-    cartEl.style.right            = '-50%';
-    sideCartEl.style.opacity      = '0';
-    sideCartEl.style.visibility   = 'hidden';
-    document.body.style.overflow  = 'auto';
+    cartEl.style.right = '-50%';
+    sideCartEl.style.opacity = '0';
+    sideCartEl.style.visibility = 'hidden';
+    document.body.style.overflow = 'auto';
 }
 
-if (cartIcon)    cartIcon.addEventListener('click', openSideCart);
+if (cartIcon) cartIcon.addEventListener('click', openSideCart);
 if (closeCartEl) closeCartEl.addEventListener('click', closeSideCart);
 
 if (sideCartEl) {
@@ -218,19 +202,17 @@ if (sideCartEl) {
 }
 
 
-// ============================================================
 // PRODUCT VIEW MODAL
-// ============================================================
 const productViewEl = document.querySelector('.product-veiw');
-const pvImg         = document.querySelector('.product-veiw .img img');
-const pvName        = document.querySelector('.product-veiw .info h2');
-const pvDesc        = document.querySelector('.product-veiw .info p');
-const pvPrice       = document.querySelector('.product-veiw .info h4');
-const pvAddBtn      = document.querySelector('.product-veiw #ADD');
-const pvQtyInput    = document.querySelector('.product-veiw .quantity input');
-const pvPlus        = document.querySelector('.product-veiw .plus');
-const pvMinus       = document.querySelector('.product-veiw .minus');
-const pvClose       = document.querySelector('.product-veiw .close');
+const pvImg = document.querySelector('.product-veiw .img img');
+const pvName = document.querySelector('.product-veiw .info h2');
+const pvDesc = document.querySelector('.product-veiw .info p');
+const pvPrice = document.querySelector('.product-veiw .info h4');
+const pvAddBtn = document.querySelector('.product-veiw #ADD');
+const pvQtyInput = document.querySelector('.product-veiw .quantity input');
+const pvPlus = document.querySelector('.product-veiw .plus');
+const pvMinus = document.querySelector('.product-veiw .minus');
+const pvClose = document.querySelector('.product-veiw .close');
 
 let currentViewProduct = null;
 
@@ -238,15 +220,15 @@ function openProductView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product || !productViewEl) return;
 
-    currentViewProduct     = product;
-    pvImg.src              = product.img;
-    pvImg.alt              = product.name;
-    pvName.textContent     = product.name;
-    pvDesc.textContent     = product.desc;
-    pvPrice.innerHTML      = `Price: <span style="color:#007aff">$${product.price.toFixed(2)}</span>`;
-    pvQtyInput.value       = 1;
+    currentViewProduct = product;
+    pvImg.src = product.img;
+    pvImg.alt = product.name;
+    pvName.textContent = product.name;
+    pvDesc.textContent = product.desc;
+    pvPrice.innerHTML = `Price: <span style="color:#007aff">$${product.price.toFixed(2)}</span>`;
+    pvQtyInput.value = 1;
 
-    productViewEl.style.opacity    = '1';
+    productViewEl.style.opacity = '1';
     productViewEl.style.visibility = 'visible';
     productViewEl.querySelector('.content').style.transform = 'translateY(0%) scale(1)';
     document.body.style.overflow = 'hidden';
@@ -256,9 +238,9 @@ function closeProductView() {
     if (!productViewEl) return;
     productViewEl.querySelector('.content').style.transform = 'translateY(-50%) scale(0)';
     setTimeout(() => {
-        productViewEl.style.opacity    = '0';
+        productViewEl.style.opacity = '0';
         productViewEl.style.visibility = 'hidden';
-        document.body.style.overflow   = 'auto';
+        document.body.style.overflow = 'auto';
     }, 300);
 }
 
@@ -291,9 +273,7 @@ if (pvAddBtn) {
 }
 
 
-// ============================================================
 // WIRE UP PRODUCT CARDS
-// ============================================================
 document.querySelectorAll('.card').forEach((card, index) => {
     const productId = index + 1;
 
@@ -320,9 +300,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
 });
 
 
-// ============================================================
 // TOAST NOTIFICATION
-// ============================================================
 function showToast(message) {
     let toast = document.getElementById('cartToast');
     if (!toast) {
@@ -351,54 +329,48 @@ function showToast(message) {
     toast.textContent = message;
     requestAnimationFrame(() => {
         toast.style.transform = 'translateX(-50%) translateY(0)';
-        toast.style.opacity   = '1';
+        toast.style.opacity = '1';
     });
 
     clearTimeout(toast._timeout);
     toast._timeout = setTimeout(() => {
         toast.style.transform = 'translateX(-50%) translateY(80px)';
-        toast.style.opacity   = '0';
+        toast.style.opacity = '0';
     }, 2500);
 }
 
 
-// ============================================================
-// INITIAL CART RENDER
-// ============================================================
+// initial cart render
 renderSideCart();
 
 
-// ============================================================
-// ============================================================
-// FILTER ENGINE
-// ============================================================
-// ============================================================
+// filter ending
 
 const productMeta = [
-    { id: 1,  inStock: true,  type: "Console",   brand: "XFX",           colors: ["black"],        sizes: [] },
-    { id: 2,  inStock: true,  type: "Keycaps",   brand: "XFX",           colors: ["black","white"], sizes: ["Small","Large"] },
-    { id: 3,  inStock: true,  type: "Monitors",  brand: "Acer",          colors: ["black"],        sizes: ["21.5 Inches"] },
-    { id: 4,  inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["50D x 65W"] },
-    { id: 5,  inStock: true,  type: "Headset",   brand: "HyperX",        colors: ["black","red"],  sizes: [] },
-    { id: 6,  inStock: true,  type: "Game PCs",  brand: "XFX",           colors: ["black"],        sizes: ["20 x 12.5 x 13"] },
-    { id: 7,  inStock: true,  type: "Chairs",    brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["52D x 66W"] },
-    { id: 8,  inStock: false, type: "Game PCs",  brand: "Electrobot",    colors: ["black"],        sizes: ["18 x 11.5 x 11"] },
-    { id: 9,  inStock: true,  type: "Console",   brand: "KandE",         colors: ["black","white"], sizes: [] },
-    { id: 10, inStock: false, type: "Console",   brand: "XFX",           colors: ["black","white"], sizes: ["256 GB"] },
-    { id: 11, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["8 GB","RX 750"] },
-    { id: 12, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["8 GB"] },
-    { id: 13, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["3 GB"] },
-    { id: 14, inStock: true,  type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["364 GB"] },
-    { id: 15, inStock: false, type: "Cards",     brand: "XFX",           colors: ["black"],        sizes: ["364 GB"] },
-    { id: 16, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","gray"],  sizes: ["52D x 66W"] },
-    { id: 17, inStock: true,  type: "Chair",     brand: "Kepler Brooks", colors: ["black","blue"],  sizes: ["50D x 66W"] },
-    { id: 18, inStock: true,  type: "Game PCs",  brand: "Electrobot",    colors: ["black"],        sizes: ["256 GB","128 GB"] },
-    { id: 19, inStock: false, type: "Console",   brand: "Sony PS5",      colors: ["white"],        sizes: [] },
-    { id: 20, inStock: true,  type: "Remote",    brand: "Vulture",       colors: ["black","gray"],  sizes: [] },
-    { id: 21, inStock: true,  type: "Monitors",  brand: "Lenovo",        colors: ["black"],        sizes: ["25.5 Inches"] },
-    { id: 22, inStock: false, type: "Remote",    brand: "Sony PS5",      colors: ["white"],        sizes: [] },
-    { id: 23, inStock: true,  type: "Monitors",  brand: "Samsung",       colors: ["black"],        sizes: ["28 Inches"] },
-    { id: 24, inStock: true,  type: "Monitors",  brand: "LG",            colors: ["black"],        sizes: ["32 Inches"] },
+    { id: 1, inStock: true, type: "Console", brand: "XFX", colors: ["black"], sizes: [] },
+    { id: 2, inStock: true, type: "Keycaps", brand: "XFX", colors: ["black", "white"], sizes: ["Small", "Large"] },
+    { id: 3, inStock: true, type: "Monitors", brand: "Acer", colors: ["black"], sizes: ["21.5 Inches"] },
+    { id: 4, inStock: true, type: "Chair", brand: "Kepler Brooks", colors: ["black", "blue"], sizes: ["50D x 65W"] },
+    { id: 5, inStock: true, type: "Headset", brand: "HyperX", colors: ["black", "red"], sizes: [] },
+    { id: 6, inStock: true, type: "Game PCs", brand: "XFX", colors: ["black"], sizes: ["20 x 12.5 x 13"] },
+    { id: 7, inStock: true, type: "Chairs", brand: "Kepler Brooks", colors: ["black", "blue"], sizes: ["52D x 66W"] },
+    { id: 8, inStock: false, type: "Game PCs", brand: "Electrobot", colors: ["black"], sizes: ["18 x 11.5 x 11"] },
+    { id: 9, inStock: true, type: "Console", brand: "KandE", colors: ["black", "white"], sizes: [] },
+    { id: 10, inStock: false, type: "Console", brand: "XFX", colors: ["black", "white"], sizes: ["256 GB"] },
+    { id: 11, inStock: true, type: "Cards", brand: "XFX", colors: ["black"], sizes: ["8 GB", "RX 750"] },
+    { id: 12, inStock: true, type: "Cards", brand: "XFX", colors: ["black"], sizes: ["8 GB"] },
+    { id: 13, inStock: false, type: "Cards", brand: "XFX", colors: ["black"], sizes: ["3 GB"] },
+    { id: 14, inStock: true, type: "Cards", brand: "XFX", colors: ["black"], sizes: ["364 GB"] },
+    { id: 15, inStock: false, type: "Cards", brand: "XFX", colors: ["black"], sizes: ["364 GB"] },
+    { id: 16, inStock: true, type: "Chair", brand: "Kepler Brooks", colors: ["black", "gray"], sizes: ["52D x 66W"] },
+    { id: 17, inStock: true, type: "Chair", brand: "Kepler Brooks", colors: ["black", "blue"], sizes: ["50D x 66W"] },
+    { id: 18, inStock: true, type: "Game PCs", brand: "Electrobot", colors: ["black"], sizes: ["256 GB", "128 GB"] },
+    { id: 19, inStock: false, type: "Console", brand: "Sony PS5", colors: ["white"], sizes: [] },
+    { id: 20, inStock: true, type: "Remote", brand: "Vulture", colors: ["black", "gray"], sizes: [] },
+    { id: 21, inStock: true, type: "Monitors", brand: "Lenovo", colors: ["black"], sizes: ["25.5 Inches"] },
+    { id: 22, inStock: false, type: "Remote", brand: "Sony PS5", colors: ["white"], sizes: [] },
+    { id: 23, inStock: true, type: "Monitors", brand: "Samsung", colors: ["black"], sizes: ["28 Inches"] },
+    { id: 24, inStock: true, type: "Monitors", brand: "LG", colors: ["black"], sizes: ["32 Inches"] },
 ];
 
 const colorOrder = ["black", "blue", "green", "gray", "red", "white"];
@@ -407,10 +379,10 @@ const activeFilters = {
     availability: [],
     minPrice: 0,
     maxPrice: 940,
-    types:  [],
+    types: [],
     brands: [],
     colors: [],
-    sizes:  [],
+    sizes: [],
 };
 
 function applyFilters() {
@@ -418,16 +390,16 @@ function applyFilters() {
     let visible = 0;
 
     cards.forEach((card, i) => {
-        const id      = i + 1;
-        const meta    = productMeta.find(m => m.id === id);
+        const id = i + 1;
+        const meta = productMeta.find(m => m.id === id);
         const product = products.find(p => p.id === id);
         if (!meta || !product) { card.style.display = ''; return; }
 
         if (activeFilters.availability.length) {
-            const wantIn  = activeFilters.availability.includes('In stock');
+            const wantIn = activeFilters.availability.includes('In stock');
             const wantOut = activeFilters.availability.includes('Out of stock');
-            if ( wantIn && !wantOut && !meta.inStock) { card.style.display = 'none'; return; }
-            if (!wantIn &&  wantOut &&  meta.inStock) { card.style.display = 'none'; return; }
+            if (wantIn && !wantOut && !meta.inStock) { card.style.display = 'none'; return; }
+            if (!wantIn && wantOut && meta.inStock) { card.style.display = 'none'; return; }
         }
 
         if (product.price < activeFilters.minPrice || product.price > activeFilters.maxPrice) {
@@ -508,14 +480,14 @@ function wireChecklistSection(sectionSelector, filterKey) {
 }
 
 wireChecklistSection('.availabilityFilter', 'availability');
-wireChecklistSection('.typeFilter',         'types');
-wireChecklistSection('.brandFilter',        'brands');
-wireChecklistSection('.sizeFilter',         'sizes');
+wireChecklistSection('.typeFilter', 'types');
+wireChecklistSection('.brandFilter', 'brands');
+wireChecklistSection('.sizeFilter', 'sizes');
 
 (function wirePriceFilter() {
-    const section  = document.querySelector('.priceFilter');
+    const section = document.querySelector('.priceFilter');
     if (!section) return;
-    const inputs   = section.querySelectorAll('input[type="number"]');
+    const inputs = section.querySelectorAll('input[type="number"]');
     const minInput = inputs[0];
     const maxInput = inputs[1];
 
@@ -552,20 +524,20 @@ wireChecklistSection('.sizeFilter',         'sizes');
         const colorName = colorOrder[idx];
         if (!colorName) return;
 
-        li.style.cursor     = 'pointer';
+        li.style.cursor = 'pointer';
         li.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
 
         li.addEventListener('click', () => {
             const isActive = li.dataset.active === 'true';
             if (isActive) {
-                li.dataset.active    = 'false';
-                li.style.transform   = '';
-                li.style.boxShadow   = '';
+                li.dataset.active = 'false';
+                li.style.transform = '';
+                li.style.boxShadow = '';
                 activeFilters.colors = activeFilters.colors.filter(c => c !== colorName);
             } else {
-                li.dataset.active    = 'true';
-                li.style.transform   = 'scale(1.25)';
-                li.style.boxShadow   = '0 0 0 2px #007aff';
+                li.dataset.active = 'true';
+                li.style.transform = 'scale(1.25)';
+                li.style.boxShadow = '0 0 0 2px #007aff';
                 activeFilters.colors.push(colorName);
             }
 
@@ -583,7 +555,7 @@ wireChecklistSection('.sizeFilter',         'sizes');
         resetLink.addEventListener('click', (e) => {
             e.preventDefault();
             colorItems.forEach(li => {
-                li.dataset.active  = 'false';
+                li.dataset.active = 'false';
                 li.style.transform = '';
                 li.style.boxShadow = '';
             });
@@ -596,19 +568,19 @@ wireChecklistSection('.sizeFilter',         'sizes');
 })();
 
 document.querySelectorAll('.filters .border').forEach(panel => {
-    const toggle   = panel.querySelector('.filter-type');
-    const details  = panel.querySelector('.details');
+    const toggle = panel.querySelector('.filter-type');
+    const details = panel.querySelector('.details');
     const plusIcon = panel.querySelector('.plus i');
     if (!toggle || !details) return;
 
     details.style.display = 'block';
-    toggle.style.cursor   = 'pointer';
+    toggle.style.cursor = 'pointer';
 
     toggle.addEventListener('click', () => {
         const isOpen = details.style.display !== 'none';
         details.style.display = isOpen ? 'none' : 'block';
         if (plusIcon) {
-            plusIcon.style.transform  = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+            plusIcon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
             plusIcon.style.transition = 'transform 0.3s ease';
         }
     });

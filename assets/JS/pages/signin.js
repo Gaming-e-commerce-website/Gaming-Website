@@ -1,7 +1,6 @@
-// ===== امسح session القديمة لما صفحة signin تتفتح =====
+// remove local storage
 localStorage.removeItem("loggedInUser");
 
-// ===== signin validation =====
 const signinForm = document.querySelector(".login-box form");
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
@@ -88,7 +87,6 @@ signinForm.addEventListener("submit", function (e) {
     submitError.style.marginTop = "10px";
     submitError.style.textAlign = "center";
 
-    // حفظ المستخدم في session
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
     setTimeout(() => {

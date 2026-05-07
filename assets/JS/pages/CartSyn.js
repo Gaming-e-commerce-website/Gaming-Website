@@ -1,4 +1,6 @@
 // assets/JS/cartSync.js
+
+
 //   pages loading
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -10,11 +12,11 @@ window.addEventListener('load', () => {
     const cartItems = JSON.parse(localStorage.getItem('gamingCart')) || [];
     const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
 
-     
+
     const badge = document.getElementById('count-items');
     if (badge) badge.textContent = totalQty;
 
-     
+
     const sideCartEl = document.querySelector('.sideCart');
     const cartEl = document.querySelector('.sideCart .cart');
     const cartIcon = document.querySelector('.navbar .container .icons .fa-cart-arrow-down');
@@ -36,7 +38,7 @@ window.addEventListener('load', () => {
         document.body.style.overflow = 'auto';
     }
 
-    // render الـ cart items
+
     function renderCart() {
         const fullDiv = document.querySelector('.sideCart .full');
         const emptyDiv = document.querySelector('.sideCart .content-empty');
@@ -84,7 +86,6 @@ window.addEventListener('load', () => {
         if (countSpan) countSpan.textContent = ' ' + totalItems;
         if (priceSpan) priceSpan.textContent = ' $' + totalPrice.toFixed(2);
 
-        // أحداث + و - والحذف
         fullDiv.querySelectorAll('.plus').forEach(btn => {
             btn.addEventListener('click', () => updateQty(parseInt(btn.dataset.id), 1));
         });
@@ -121,7 +122,7 @@ window.addEventListener('load', () => {
         if (b) b.textContent = qty;
     }
 
-    
+
     if (cartIcon) cartIcon.addEventListener('click', openSideCart);
     if (closeCartEl) closeCartEl.addEventListener('click', closeSideCart);
     if (sideCartEl) {
