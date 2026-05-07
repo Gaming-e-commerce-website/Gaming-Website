@@ -69,17 +69,9 @@ function renderCartPage() {
             <span>Total Items</span>
             <span>${totalQty}</span>
         </div>
-        <div class="summary-line">
-            <span>Subtotal</span>
-            <span>$${totalPrice.toFixed(2)}</span>
-        </div>
-        <div class="summary-line">
-            <span>Shipping</span>
-            <span style="color:#24d57a">Free</span>
-        </div>
         <div class="summary-line total-line">
             <span>Total</span>
-            <span>$${totalPrice.toFixed(2)}</span>
+            <span>$ ${totalPrice.toFixed(2)}</span>
         </div>
     `;
 
