@@ -17,7 +17,7 @@ function showError(div, message) {
     div.textContent = message;
     div.style.color = "#e53e3e";
     div.style.fontSize = "13px";
-    div.style.marginTop = "-22px";
+    div.style.marginTop = "-10px";
     div.style.marginBottom = "12px";
 }
 

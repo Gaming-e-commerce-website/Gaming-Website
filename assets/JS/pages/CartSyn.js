@@ -121,7 +121,7 @@ window.addEventListener('load', () => {
         if (b) b.textContent = qty;
     }
 
-    // ربط الأحداث
+    
     if (cartIcon) cartIcon.addEventListener('click', openSideCart);
     if (closeCartEl) closeCartEl.addEventListener('click', closeSideCart);
     if (sideCartEl) {

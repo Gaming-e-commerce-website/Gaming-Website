@@ -293,17 +293,35 @@ body {
       }
     }
 
-    .icons {
-      width: 150px;
+     .icons {
+      width:auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 23px;
-
+      gap:20px;
       div {
         position: relative;
         transition: all 0.6s ease;
-
+     &.account{
+         display: flex;
+         align-items: center;
+          gap:5px;
+         i{
+          transition: all 0.6s ease;
+          &:hover{
+            transform: translateY(-5px);
+          }
+         }
+         .name{
+          font-size: 16px;
+          align-self: flex-end;
+         }
+         &:hover{
+          transform: translateY(0px);
+         }
+     }
+       
         i {
           cursor: pointer;
         }
@@ -325,6 +343,7 @@ body {
           transform: translateY(-5px);
         }
       }
+      
     }
   }
 }
