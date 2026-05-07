@@ -161,9 +161,8 @@ function isLoggedIn() {
 }
 
 function requireLogin() {
-    
     localStorage.setItem('redirectAfterLogin', window.location.href);
-    showToast('  Please sign in first to add items to your cart!');
+    showToast('Please sign in first to add items to your cart!');
     setTimeout(() => {
         window.location.href = '../Pages/Signin.html';
     }, 1500);

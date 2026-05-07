@@ -1,10 +1,10 @@
-// signin validation
+// ===== امسح session القديمة لما صفحة signin تتفتح =====
+localStorage.removeItem("loggedInUser");
 
+// ===== signin validation =====
 const signinForm = document.querySelector(".login-box form");
-
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
-
 const emailError = document.querySelector(".emailerror");
 const passError = document.querySelector(".passerror");
 const submitError = document.querySelector(".submiterror");
@@ -47,7 +47,6 @@ function validatePassword() {
 
 emailInput.addEventListener("blur", validateEmail);
 passwordInput.addEventListener("blur", validatePassword);
-
 emailInput.addEventListener("input", () => clearError(emailError));
 passwordInput.addEventListener("input", () => clearError(passError));
 
@@ -56,27 +55,22 @@ signinForm.addEventListener("submit", function (e) {
 
     const isEmailValid = validateEmail();
     const isPasswordValid = validatePassword();
-
     if (!isEmailValid || !isPasswordValid) return;
 
     const enteredEmail = emailInput.value.trim().toLowerCase();
     const enteredPassword = passwordInput.value;
-
     const registeredUsers = JSON.parse(localStorage.getItem("gamingUsers")) || [];
-
     const foundUser = registeredUsers.find((user) => user.email === enteredEmail);
 
     if (!foundUser) {
         submitError.textContent = "";
         showError(submitError, "  No account found with this email. Please ");
-
         const link = document.createElement("a");
         link.href = "signup.html";
         link.textContent = "Sign Up first.";
         link.style.color = "#414cde";
         link.style.fontWeight = "600";
         link.style.textDecoration = "underline";
-
         submitError.style.marginTop = "10px";
         submitError.appendChild(link);
         return;
@@ -87,7 +81,6 @@ signinForm.addEventListener("submit", function (e) {
         return;
     }
 
-
     clearError(submitError);
     submitError.textContent = `  Welcome back, ${foundUser.firstName}! Redirecting...`;
     submitError.style.color = "#38a169";
@@ -95,7 +88,7 @@ signinForm.addEventListener("submit", function (e) {
     submitError.style.marginTop = "10px";
     submitError.style.textAlign = "center";
 
-    // Save logged-in user session
+    // حفظ المستخدم في session
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
     setTimeout(() => {

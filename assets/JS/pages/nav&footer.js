@@ -1,5 +1,3 @@
-
-
 // ===== Show Username After Login =====
 let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 let nameParagraph = document.querySelector('.name');
@@ -10,7 +8,5 @@ if (loggedInUser) {
     accountLink.href = "#";
 } else {
     nameParagraph.textContent = '';
-    accountLink.href = "Pages/Signin.html";
+    accountLink.href = "../Pages/Signin.html";
 }
-
-
